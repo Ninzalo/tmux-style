@@ -15,6 +15,7 @@ run '~/.tmux/plugins/tpm/tpm'
 ```
 
 <h2 align="center">Examples</h2>
+<img src='./assets/config1.png' height='11'/>
 
 <h3>Config 1</h3>
 
@@ -42,6 +43,7 @@ set -g window-status-format "#{E:@tms-default-window-widget}" # Customizes defau
 ```
 
 <h3>Config 2</h3>
+<img src='./assets/config2.png' height='30'/>
 
 ```sh
 # tmux.conf
@@ -69,6 +71,7 @@ set -ag status-left "#{E:@tms-custom-widget}" # Creates default values for 'cust
 ```
 
 <h3>Config 3</h3>
+<img src='./assets/config3.png' height='30'/>
 
 ```sh
 # tmux.conf
