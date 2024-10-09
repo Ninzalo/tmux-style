@@ -67,3 +67,24 @@ set -g @tms-custom-right-corner-color "cyan"
 set -ag status-left "#{E:@tms-custom-widget}" # Creates default values for 'custom' widget
 # ...
 ```
+
+<h3>Config 3</h3>
+
+```sh
+# tmux.conf
+# ...
+
+set -g status-left "" # Clears status-left
+set -g status-right "" # Clears status-right
+
+set -g @tms-custom2-left-corner "▟"
+set -g @tms-custom2-left-corner-color "white"
+set -g @tms-custom2-left-separator "   "
+set -g @tms-custom2-text "my second custom widget"
+set -g @tms-custom2-text-fg "#ff0000"
+set -g @tms-custom2-text-bg "black"
+set -g @tms-custom2-right-separator " "
+
+set -ag status-left "#{E:@tms-custom2-widget}" # Creates default values for 'custom2' widget
+# ...
+```
