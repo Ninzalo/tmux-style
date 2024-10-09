@@ -40,3 +40,30 @@ set -g window-status-format "#{E:@tms-default-window-widget}" # Customizes defau
 
 # ...
 ```
+
+<h3>Config 2</h3>
+
+```sh
+# tmux.conf
+# ...
+
+set -g status-left "" # Clears status-left
+set -g status-right "" # Clears status-right
+
+set -g @tms-custom-left-corner "▜"
+set -g @tms-custom-left-corner-color "#ffffff"
+set -g @tms-custom-icon "♦ "
+set -g @tms-custom-icon-color "#{E:@tms-custom-left-corner-color}"
+set -g @tms-custom-left-separator "█"
+set -g @tms-custom-left-separator-color "cyan"
+set -g @tms-custom-text "my custom widget"
+set -g @tms-custom-text-fg "#ffffff"
+set -g @tms-custom-text-bg "cyan"
+set -g @tms-custom-right-separator "█"
+set -g @tms-custom-right-separator-color "cyan"
+set -g @tms-custom-right-corner "▛"
+set -g @tms-custom-right-corner-color "cyan"
+
+set -ag status-left "#{E:@tms-custom-widget}" # Creates default values for 'custom' widget
+# ...
+```
