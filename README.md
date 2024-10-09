@@ -50,7 +50,6 @@ set -g window-status-format "#{E:@tms-default-window-widget}" # Customizes defau
 # ...
 
 set -g status-left "" # Clears status-left
-set -g status-right "" # Clears status-right
 
 set -g @tms-custom-left-corner "▜"
 set -g @tms-custom-left-corner-color "#ffffff"
@@ -78,7 +77,6 @@ set -ag status-left "#{E:@tms-custom-widget}" # Creates default values for 'cust
 # ...
 
 set -g status-left "" # Clears status-left
-set -g status-right "" # Clears status-right
 
 set -g @tms-custom2-left-corner "▟"
 set -g @tms-custom2-left-corner-color "white"
