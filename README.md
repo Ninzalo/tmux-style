@@ -1,7 +1,7 @@
 <h1 align="center">Tmux-style</h1>
 <h2 align="center">Installation</h2>
 
-### Using [TPM](https://github.com/tmux-plugins/tpm):
+<h3>Using <a href='https://github.com/tmux-plugins/tpm'>TPM</a></h3>
 
 ```sh
 # tmux.conf
