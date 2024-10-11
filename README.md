@@ -1,6 +1,5 @@
 <h1 align="center">Tmux-style</h1>
 <h2 align="center">Installation</h2>
-
 <h3>Using <a href='https://github.com/tmux-plugins/tpm'>TPM</a></h3>
 
 ```sh
@@ -14,8 +13,20 @@ set -g @plugin 'Ninzalo/tmux-style'
 run '~/.tmux/plugins/tpm/tpm'
 ```
 
-<h2 align="center">Examples</h2>
+<h2 align="center">In-built widgets</h2>
+<ol>
+    <li>Gruvbox</li>
+    <ul>
+        <li>session: <img src='./assets/session.png' height='12'/></li>
+        <li>current-window: <img src='./assets/current-window.png' height='12'/></li>
+        <li>default-window: <img src='./assets/default-window.png' height='12'/></li>
+        <li>gitmux: <img src='./assets/gitmux.png' height='12'/> (requires gitmux to be installed)</li>
+        <li>directory: <img src='./assets/directory.png' height='12'/></li>
+        <li>date-time: <img src='./assets/date-time.png' height='12'/></li>
+    </ul>
+</ol>
 
+<h2 align="center">Examples</h2>
 <h3>Config 1 (used in this <a href='https://github.com/Ninzalo/dotfiles/blob/d2a10b92239739568f2bd854d85e5d79bdc98de1/tmux/.config/tmux/tmux.conf#L84-L101'>tmux.conf</a>)</h3>
 <img src='./assets/config1.png' height='16'/>
 
