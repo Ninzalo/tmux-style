@@ -17,7 +17,7 @@ run '~/.tmux/plugins/tpm/tpm'
 <h2 align="center">Examples</h2>
 
 <h3>Config 1 (used in this <a href='https://github.com/Ninzalo/dotfiles/blob/d2a10b92239739568f2bd854d85e5d79bdc98de1/tmux/.config/tmux/tmux.conf#L84-L101'>tmux.conf</a>)</h3>
-<img src='./assets/config1.png' height='11'/>
+<img src='./assets/config1.png' height='16'/>
 
 ```sh
 # tmux.conf
