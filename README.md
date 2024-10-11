@@ -13,6 +13,35 @@ set -g @plugin 'Ninzalo/tmux-style'
 run '~/.tmux/plugins/tpm/tpm'
 ```
 
+<h2 align='center'>Create a widget</h2>
+<p>You can create your own widget in your <code>tmux.conf</code> file using <code>#{E:@tms-[your-widget-name]-widget}</code> format:</p>
+<pre>set -ag status-left "#{E:@tms-[your-widget-name]-widget}"</pre>
+<p>Parameters to midify:</p>
+<ul>
+    <li><code>status-left</code></li>
+    <li><code>status-right</code></li>
+    <li><code>window-status-format</code></li>
+    <li><code>window-status-current-format</code></li>
+</ul>
+<p>All of the widget parameters will be created automatically. Run <code>tmux show-options -g</code> command to check it.</p>
+<p>Auto-created parameters:</p>
+<ul>
+    <li><code>@tms-[your-widget-name]-left-corner ""</code></li>
+    <li><code>@tms-[your-widget-name]-left-corner-color ""</code></li>
+    <li><code>@tms-[your-widget-name]-icon ""</code></li>
+    <li><code>@tms-[your-widget-name]-icon-color ""</code></li>
+    <li><code>@tms-[your-widget-name]-left-separator ""</code></li>
+    <li><code>@tms-[your-widget-name]-left-separator-color ""</code></li>
+    <li><code>@tms-[your-widget-name]-text ""</code></li>
+    <li><code>@tms-[your-widget-name]-text-fg ""</code></li>
+    <li><code>@tms-[your-widget-name]-text-bg ""</code></li>
+    <li><code>@tms-[your-widget-name]-right-separator ""</code></li>
+    <li><code>@tms-[your-widget-name]-right-separator-color ""</code></li>
+    <li><code>@tms-[your-widget-name]-right-corner ""</code></li>
+    <li><code>@tms-[your-widget-name]-right-corner-color ""</code></li>
+</ul>
+<p>Customize the widget with <code>set -g @tms-[your-widget-name]-[parameter] "[value]"</code></p>
+
 <h2 align="center">In-built widgets</h2>
 <ol>
     <li>Gruvbox</li>
