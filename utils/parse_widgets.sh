@@ -50,6 +50,12 @@ for WIDGET in $WIDGETS; do
     continue
   fi
 
+  if [ "$PARAMS_AMOUNT" -lt 1 ]; then
+    echo "Error: PARAMS_AMOUNT ($PARAMS_AMOUNT) for \
+      widget $WIDGET_NAME is less than 1"
+    continue
+  fi
+
   echo "Found widget: $WIDGET_NAME with params amount: $PARAMS_AMOUNT"
   sh "$CURRENT_PATH/utils/set_widget_options.sh" \
     "$PLUGIN_NAME" "$WIDGET_NAME" "$PARAMS_AMOUNT" "$WIDGET"
