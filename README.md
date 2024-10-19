@@ -14,9 +14,13 @@ run '~/.tmux/plugins/tpm/tpm'
 ```
 
 <h2 align='center'>Create a widget</h2>
-<p>You can create your own widget in your <code>tmux.conf</code> file using <code>#{E:@tms-[your-widget-name]-widget}</code> format:</p>
-<pre>set -ag status-left "#{E:@tms-[your-widget-name]-widget}"</pre>
-<p>Parameters to midify:</p>
+<p>You can create your own widget in your <code>tmux.conf</code> file using <code>#{E:@tms-[your-widget-name]-[parts-amount]-widget}</code> format:</p>
+<pre>set -ag status-left "#{E:@tms-[your-widget-name]-[parts-amount]-widget}"</pre>
+
+> [!NOTE]
+> Up to 20 parts are allowed.
+
+<p>In-built TMUX variables to midify:</p>
 <ul>
     <li><code>status-left</code></li>
     <li><code>status-right</code></li>
@@ -24,23 +28,13 @@ run '~/.tmux/plugins/tpm/tpm'
     <li><code>window-status-current-format</code></li>
 </ul>
 <p>All of the widget parameters will be created automatically. Run <code>tmux show-options -g</code> command to check it.</p>
-<p>Auto-created parameters:</p>
+<p>Auto-created parameters for each part:</p>
 <ul>
-    <li><code>@tms-[your-widget-name]-left-corner ""</code></li>
-    <li><code>@tms-[your-widget-name]-left-corner-color ""</code></li>
-    <li><code>@tms-[your-widget-name]-icon ""</code></li>
-    <li><code>@tms-[your-widget-name]-icon-color ""</code></li>
-    <li><code>@tms-[your-widget-name]-left-separator ""</code></li>
-    <li><code>@tms-[your-widget-name]-left-separator-color ""</code></li>
-    <li><code>@tms-[your-widget-name]-text ""</code></li>
-    <li><code>@tms-[your-widget-name]-text-fg ""</code></li>
-    <li><code>@tms-[your-widget-name]-text-bg ""</code></li>
-    <li><code>@tms-[your-widget-name]-right-separator ""</code></li>
-    <li><code>@tms-[your-widget-name]-right-separator-color ""</code></li>
-    <li><code>@tms-[your-widget-name]-right-corner ""</code></li>
-    <li><code>@tms-[your-widget-name]-right-corner-color ""</code></li>
+    <li><code>@tms-[your-widget-name]-p[part-number]-value ""</code></li>
+    <li><code>@tms-[your-widget-name]-p[part-number]-fg ""</code></li>
+    <li><code>@tms-[your-widget-name]-p[part-number]-bg ""</code></li>
 </ul>
-<p>Customize the widget with <code>set -g @tms-[your-widget-name]-[parameter] "[value]"</code></p>
+<p>Customize the widget with <code>set -g @tms-[your-widget-name]-p[part-number]-[parameter] "[value]"</code></p>
 
 <h2 align="center">In-built widgets</h2>
 <ol>
@@ -56,28 +50,29 @@ run '~/.tmux/plugins/tpm/tpm'
 </ol>
 
 <h2 align="center">Examples</h2>
-<h3>Config 1 (used in this <a href='https://github.com/Ninzalo/dotfiles/blob/d2a10b92239739568f2bd854d85e5d79bdc98de1/tmux/.config/tmux/tmux.conf#L84-L101'>tmux.conf</a>)</h3>
+<h3>Config 1 (used in this <a href='https://github.com/Ninzalo/dotfiles-tmux/blob/dc84bcc766e71bc1799f51649cdca09d95260625/tmux.conf#L84-L101'>tmux.conf</a>)</h3>
 <img src='./assets/config1.png' height='16'/>
 
 ```sh
 # tmux.conf
 # ...
 
-set -g status-left "" # Clears status-left
-set -g status-right "" # Clears status-right
+set -g status-left "" # Clear status-left
+set -g status-right "" # Clear status-right
 
-set -g @tms-colorscheme "gruvbox" # Loads gruvbox colorscheme [Default: gruvbox]
+set -g @tms-colorscheme "gruvbox" # Load 'gruvbox' colorscheme [Default: gruvbox]
 
-set -g @tms-gitmux-text "#(gitmux -cfg $HOME/.config/gitmux/.gitmux.conf #{pane_current_path})" # Changes text of in-built gitmux widget
+# Set a value in the 3rf part of in-built 'gitmux' widget
+set -g @tms-gitmux-p3-value "#{?#(gitmux #{pane_current_path}), #(gitmux -cfg $HOME/.config/gitmux/.gitmux.conf #{pane_current_path}),}"
 
-set -ag status-left "#{E:@tms-session-widget}" # Adds in-built session widget to status-left
+set -ag status-left "#{E:@tms-session-3-widget}" # Add in-built 'session' widget to status-left with 3 parts
 
-set -ag status-right "#{E:@tms-gitmux-widget}" # Adds in-built gitmux widget to status-right
-set -ag status-right "#{E:@tms-directory-widget}" # Adds in-built directory widget to status-right
-set -ag status-right "#{E:@tms-date-time-widget}" # Adds in-built date-time widget to status-right
+set -ag status-right "#{E:@tms-gitmux-widget}" # Add in-built 'gitmux' widget to status-right with default amount of parts (4)
+set -ag status-right "#{E:@tms-directory-widget}" # Add in-built 'directory' widget to status-right with default amount of parts (4)
+set -ag status-right "#{E:@tms-date-time-widget}" # Add in-built 'date-time' widget to status-right with default amount of parts (4)
 
-set -g window-status-current-format "#{E:@tms-current-window-widget}" # Customizes default tmux current window widget with gruvbox theme
-set -g window-status-format "#{E:@tms-default-window-widget}" # Customizes default tmux window widget with gruvbox theme
+set -g window-status-current-format "#{E:@tms-current-window-widget}" # Customize default TMUX current window widget with gruvbox theme (contains 4 parts)
+set -g window-status-format "#{E:@tms-default-window-widget}" # Customize default TMUX window widget with gruvbox theme (contains 4 parts)
 
 # ...
 ```
@@ -89,23 +84,24 @@ set -g window-status-format "#{E:@tms-default-window-widget}" # Customizes defau
 # tmux.conf
 # ...
 
-set -g status-left "" # Clears status-left
+set -g status-left "" # Clear status-left
 
-set -g @tms-custom-left-corner "▜"
-set -g @tms-custom-left-corner-color "#ffffff"
-set -g @tms-custom-icon "♦ "
-set -g @tms-custom-icon-color "#{E:@tms-custom-left-corner-color}"
-set -g @tms-custom-left-separator "█"
-set -g @tms-custom-left-separator-color "cyan"
-set -g @tms-custom-text "my custom widget"
-set -g @tms-custom-text-fg "#ffffff"
-set -g @tms-custom-text-bg "cyan"
-set -g @tms-custom-right-separator "█"
-set -g @tms-custom-right-separator-color "cyan"
-set -g @tms-custom-right-corner "▛"
-set -g @tms-custom-right-corner-color "cyan"
+set -g @tms-custom-p1-value "▜" # Set "▜" as a value in the 1st part of 'custom' widget
+set -g @tms-custom-p1-fg "#ffffff" # Set white as foreground color in the 1st part of 'custom' widget
+set -g @tms-custom-p1-bg "#{E:@tms-thm-bg}" # Set @tms-thm-bg as background color in the 1st part of 'custom' widget
+set -g @tms-custom-p2-value "♦ " # Set "♦ " as a value in the 2nd part of 'custom' widget
+set -g @tms-custom-p2-fg "cyan"
+set -g @tms-custom-p2-bg "#{E:@tms-custom-p1-fg}"
+set -g @tms-custom-p3-value " my custom widget"
+set -g @tms-custom-p3-fg "#ffffff"
+set -g @tms-custom-p3-bg "cyan"
+set -g @tms-custom-p4-value "█▛"
+set -g @tms-custom-p4-fg "#{E:@tms-custom-p3-bg}"
+set -g @tms-custom-p4-bg "#{E:@tms-custom-p1-bg}"
 
-set -ag status-left "#{E:@tms-custom-widget}" # Creates default values for 'custom' widget
+set -ag status-left "#{E:@tms-custom-widget}" # Create default values for 'custom' widget with default amount of parts (4)
+# Or: set -ag status-left "#{E:@tms-custom-4-widget}" # Gives the same result
+
 # ...
 ```
 
@@ -116,16 +112,15 @@ set -ag status-left "#{E:@tms-custom-widget}" # Creates default values for 'cust
 # tmux.conf
 # ...
 
-set -g status-left "" # Clears status-left
+set -g status-left "" # Clear status-left
 
-set -g @tms-custom2-left-corner "▟"
-set -g @tms-custom2-left-corner-color "white"
-set -g @tms-custom2-left-separator "   "
-set -g @tms-custom2-text "my second custom widget"
-set -g @tms-custom2-text-fg "#ff0000"
-set -g @tms-custom2-text-bg "black"
-set -g @tms-custom2-right-separator " "
+set -g @tms-custom2-p1-value "▟"
+set -g @tms-custom2-p1-fg "white"
+set -g @tms-custom2-p1-bg "#{E:@tms-thm-bg}"
+set -g @tms-custom2-p2-value "   my second custom widget"
+set -g @tms-custom2-p2-fg "red"
+set -g @tms-custom2-p2-bg "#{E:@tms-thm-bg}"
 
-set -ag status-left "#{E:@tms-custom2-widget}" # Creates default values for 'custom2' widget
+set -ag status-left "#{E:@tms-custom2-2-widget}" # Create default values for 'custom2' widget with 2 parts
 # ...
 ```
