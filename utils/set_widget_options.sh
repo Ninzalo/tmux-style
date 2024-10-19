@@ -1,105 +1,55 @@
 #!/bin/bash
 
-if [ "$#" -ne 2 ]; then
-  echo "Error: Invalid number of arguments. Expected 2, got $#."
+if [ "$#" -ne 4 ]; then
+  echo "Error: Invalid number of arguments. Expected 4, got $#."
   exit 1
 fi
 
 PLUGIN_NAME=$1
 WIDGET_NAME=$2
+PARAMS_AMOUNT=$3
+ORIGINAL_WIDGET=$4
 
-echo "Setting widget options for: PLUGIN_NAME=$PLUGIN_NAME, WIDGET_NAME=$WIDGET_NAME"
+echo "Setting widget options for: PLUGIN_NAME=$PLUGIN_NAME, \
+  WIDGET_NAME=$WIDGET_NAME, PARAMS_AMOUNT=$PARAMS_AMOUNT"
 
-tmux set-option -ogq @${PLUGIN_NAME}-${WIDGET_NAME}-left-corner ""
+# Цикл по количеству параметров (от 1 до PARAMS_AMOUNT)
+for ITERATION in $(seq 1 "$PARAMS_AMOUNT"); do
+  tmux set-option -ogq @${PLUGIN_NAME}-${WIDGET_NAME}-p${ITERATION}-value ""
+  if [ $? -ne 0 ]; then
+    echo "Error: Failed to set option "\
+      "@${PLUGIN_NAME}-${WIDGET_NAME}-p${ITERATION}-value"
+    exit 1
+  fi
+
+  tmux set-option -ogq @${PLUGIN_NAME}-${WIDGET_NAME}-p${ITERATION}-fg ""
+  if [ $? -ne 0 ]; then
+    echo "Error: Failed to set option "\
+      "@${PLUGIN_NAME}-${WIDGET_NAME}-p${ITERATION}-fg"
+    exit 1
+  fi
+
+  tmux set-option -ogq @${PLUGIN_NAME}-${WIDGET_NAME}-p${ITERATION}-bg ""
+  if [ $? -ne 0 ]; then
+    echo "Error: Failed to set option "\
+      "@${PLUGIN_NAME}-${WIDGET_NAME}-p${ITERATION}-bg"
+    exit 1
+  fi
+done
+
+WIDGET_FORMAT=""
+for ITERATION in $(seq 1 "$PARAMS_AMOUNT"); do
+  WIDGET_FORMAT+="#[fg=#{@${PLUGIN_NAME}-${WIDGET_NAME}-p${ITERATION}-fg},"
+  WIDGET_FORMAT+="bg=#{@${PLUGIN_NAME}-${WIDGET_NAME}-p${ITERATION}-bg}]"
+  WIDGET_FORMAT+="#{@${PLUGIN_NAME}-${WIDGET_NAME}-p${ITERATION}-value}"
+done
+
+tmux set-option -gqF "$ORIGINAL_WIDGET" "$WIDGET_FORMAT"
+
 if [ $? -ne 0 ]; then
-  echo "Error: Failed to set option @${PLUGIN_NAME}-${WIDGET_NAME}-left-corner"
+  echo "Error: Failed to set widget format for $ORIGINAL_WIDGET"
   exit 1
 fi
 
-tmux set-option -ogq @${PLUGIN_NAME}-${WIDGET_NAME}-left-corner-color ""
-if [ $? -ne 0 ]; then
-  echo "Error: Failed to set option @${PLUGIN_NAME}-${WIDGET_NAME}-left-corner-color"
-  exit 1
-fi
-
-tmux set-option -ogq @${PLUGIN_NAME}-${WIDGET_NAME}-icon ""
-if [ $? -ne 0 ]; then
-  echo "Error: Failed to set option @${PLUGIN_NAME}-${WIDGET_NAME}-icon"
-  exit 1
-fi
-
-tmux set-option -ogq @${PLUGIN_NAME}-${WIDGET_NAME}-icon-color ""
-if [ $? -ne 0 ]; then
-  echo "Error: Failed to set option @${PLUGIN_NAME}-${WIDGET_NAME}-icon-color"
-  exit 1
-fi
-
-tmux set-option -ogq @${PLUGIN_NAME}-${WIDGET_NAME}-left-separator ""
-if [ $? -ne 0 ]; then
-  echo "Error: Failed to set option @${PLUGIN_NAME}-${WIDGET_NAME}-left-separator"
-  exit 1
-fi
-
-tmux set-option -ogq @${PLUGIN_NAME}-${WIDGET_NAME}-left-separator-color ""
-if [ $? -ne 0 ]; then
-  echo "Error: Failed to set option @${PLUGIN_NAME}-${WIDGET_NAME}-left-separator-color"
-  exit 1
-fi
-
-tmux set-option -ogq @${PLUGIN_NAME}-${WIDGET_NAME}-text ""
-if [ $? -ne 0 ]; then
-  echo "Error: Failed to set option @${PLUGIN_NAME}-${WIDGET_NAME}-text"
-  exit 1
-fi
-
-tmux set-option -ogq @${PLUGIN_NAME}-${WIDGET_NAME}-text-fg ""
-if [ $? -ne 0 ]; then
-  echo "Error: Failed to set option @${PLUGIN_NAME}-${WIDGET_NAME}-text-fg"
-  exit 1
-fi
-
-tmux set-option -ogq @${PLUGIN_NAME}-${WIDGET_NAME}-text-bg ""
-if [ $? -ne 0 ]; then
-  echo "Error: Failed to set option @${PLUGIN_NAME}-${WIDGET_NAME}-text-bg"
-  exit 1
-fi
-
-tmux set-option -ogq @${PLUGIN_NAME}-${WIDGET_NAME}-right-separator ""
-if [ $? -ne 0 ]; then
-  echo "Error: Failed to set option @${PLUGIN_NAME}-${WIDGET_NAME}-right-separator"
-  exit 1
-fi
-
-tmux set-option -ogq @${PLUGIN_NAME}-${WIDGET_NAME}-right-separator-color ""
-if [ $? -ne 0 ]; then
-  echo "Error: Failed to set option @${PLUGIN_NAME}-${WIDGET_NAME}-right-separator-color"
-  exit 1
-fi
-
-tmux set-option -ogq @${PLUGIN_NAME}-${WIDGET_NAME}-right-corner ""
-if [ $? -ne 0 ]; then
-  echo "Error: Failed to set option @${PLUGIN_NAME}-${WIDGET_NAME}-right-corner"
-  exit 1
-fi
-
-tmux set-option -ogq @${PLUGIN_NAME}-${WIDGET_NAME}-right-corner-color ""
-if [ $? -ne 0 ]; then
-  echo "Error: Failed to set option @${PLUGIN_NAME}-${WIDGET_NAME}-right-corner-color"
-  exit 1
-fi
-
-tmux set-option -gqF @${PLUGIN_NAME}-${WIDGET_NAME}-widget "\
-#[fg=#{@${PLUGIN_NAME}-${WIDGET_NAME}-left-corner-color},bg=#{@${PLUGIN_NAME}-thm-bg}]#{@${PLUGIN_NAME}-${WIDGET_NAME}-left-corner}\
-#[fg=#{@${PLUGIN_NAME}-${WIDGET_NAME}-text-bg},bg=#{@${PLUGIN_NAME}-${WIDGET_NAME}-icon-color}]#{@${PLUGIN_NAME}-${WIDGET_NAME}-icon}\
-#[fg=#{@${PLUGIN_NAME}-${WIDGET_NAME}-left-separator-color},bg=#{@${PLUGIN_NAME}-${WIDGET_NAME}-text-bg}]#{@${PLUGIN_NAME}-${WIDGET_NAME}-left-separator}\
-#[fg=#{@${PLUGIN_NAME}-${WIDGET_NAME}-text-fg},bg=#{@${PLUGIN_NAME}-${WIDGET_NAME}-text-bg}]#{@${PLUGIN_NAME}-${WIDGET_NAME}-text}\
-#[fg=#{@${PLUGIN_NAME}-${WIDGET_NAME}-right-separator-color},bg=#{@${PLUGIN_NAME}-${WIDGET_NAME}-text-bg}]#{@${PLUGIN_NAME}-${WIDGET_NAME}-right-separator}\
-#[fg=#{@${PLUGIN_NAME}-${WIDGET_NAME}-right-corner-color},bg=#{@${PLUGIN_NAME}-thm-bg}]#{@${PLUGIN_NAME}-${WIDGET_NAME}-right-corner}"
-
-if [ $? -ne 0 ]; then
-  echo "Error: Failed to set widget format for @${PLUGIN_NAME}-${WIDGET_NAME}-widget"
-  exit 1
-fi
-
-echo "Successfully set widget options for: $WIDGET_NAME"
-
+echo "Successfully set widget options for: $WIDGET_NAME"\
+  "with PARAMS_AMOUNT=$PARAMS_AMOUNT"
