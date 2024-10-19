@@ -20,6 +20,12 @@ run '~/.tmux/plugins/tpm/tpm'
 > [!NOTE]
 > Up to 20 parts are allowed.
 
+> [!NOTE]
+> `parts-amount` defaults to 4
+
+> [!NOTE]
+> `parts-amount` is not necessary attribute. `#{E:@tms-[your-widget-name]-widget}` is an allowed format. 4 parts will be created as a default (it equals to `#{E:@tms-[your-widget-name]-4-widget}`)
+
 <p>In-built TMUX variables to midify:</p>
 <ul>
     <li><code>status-left</code></li>
