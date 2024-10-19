@@ -27,7 +27,7 @@ if [ -z "$WIDGETS" ]; then
 fi
 
 for WIDGET in $WIDGETS; do
-  WIDGET_NAME=$(echo "$WIDGET" | sed 's/-[0-9]\+-widget$/-widget/' | sed -n "s/^@$PLUGIN_NAME-\(.*\)-widget$/\1/p")
+  WIDGET_NAME=$(echo "$WIDGET" | sed 's/-[0-9]\+-widget$/-widget/' | sed -n "s/^@$PLUGIN_NAME-\(.*\)-widget$/\1/p" | sed 's/-*$//')
   PARAMS_AMOUNT=$(echo "$WIDGET" | sed -n "s/^@$PLUGIN_NAME-.*-\([0-9]\+\)-widget$/\1/p")
 
   if [ -z "$PARAMS_AMOUNT" ]; then
