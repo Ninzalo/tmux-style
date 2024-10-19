@@ -27,7 +27,7 @@ if [ -z "$WIDGETS" ]; then
 fi
 
 for WIDGET in $WIDGETS; do
-  WIDGET_NAME=$(echo "$WIDGET" | sed 's/-[0-9]\+-widget$/-widget/' | sed -n "s/^@$PLUGIN_NAME-\(.*\)-widget$/\1/p" | sed 's/-*$//')
+  WIDGET_NAME=$(echo "$WIDGET" | sed 's/-[0-9]\+-widget$/-widget/' | sed -n "s/^@$PLUGIN_NAME-\(.*\)-widget$/\1/p" | sed 's/-*$//' | sed 's/^-*//')
 
   if [ -z "$WIDGET_NAME" ]; then
     echo "Warning: Failed to extract widget name from $WIDGET"
