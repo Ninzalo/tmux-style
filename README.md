@@ -154,5 +154,6 @@ set -g @tms-custom2-p2-fg "red"
 set -g @tms-custom2-p2-bg "#{E:@tms-thm-bg}"
 
 set -ag status-left "#{E:@tms-custom2-2-widget}" # Create default values for 'custom2' widget with 2 parts
+
 # ...
 ```
