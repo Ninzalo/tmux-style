@@ -26,7 +26,7 @@ run '~/.tmux/plugins/tpm/tpm'
 > [!TIP]
 > `parts-amount` is not necessary attribute. `#{E:@tms-[your-widget-name]-widget}` is an allowed format. 4 parts will be created as a default (it equals to `#{E:@tms-[your-widget-name]-4-widget}`)
 
-<p>In-built TMUX variables to midify:</p>
+<p>Built-in TMUX variables to midify:</p>
 <ul>
     <li><code>status-left</code></li>
     <li><code>status-right</code></li>
@@ -43,13 +43,13 @@ run '~/.tmux/plugins/tpm/tpm'
 <p>Customize the widget with <code>set -g @tms-[your-widget-name]-p[part-number]-[parameter] "[value]"</code></p>
 
 <h2 align="center">Colorschemes</h2>
-<h3>Use in-built colorschemes</h3>
+<h3>Use built-in colorschemes</h3>
 
 ```sh
 # tmux.conf
 # ...
 
-set -g @tms-colorscheme "gruvbox-dark" # Load in-built 'gruvbox-dark' colorscheme [Default: gruvbox-dark]
+set -g @tms-colorscheme "gruvbox-dark" # Load built-in 'gruvbox-dark' colorscheme [Default: gruvbox-dark]
 
 # ...
 ```
@@ -68,7 +68,7 @@ set -g @tms-custom-colorscheme-path "#{d:current_file}/custom.conf" # Load 'cust
 > [!IMPORTANT]
 > Specifying `@tms-colorscheme` is not needed while using custom colorscheme. `@tms-custom-colorscheme-path` will overwrite `@tms-colorscheme`
 
-<h2 align="center">In-built widgets</h2>
+<h2 align="center">Built-in widgets</h2>
 <ol>
     <li>Gruvbox-dark</li>
     <ul>
@@ -94,14 +94,14 @@ set -g status-right "" # Clear status-right
 
 set -g @tms-colorscheme "gruvbox-dark" # Load 'gruvbox-dark' colorscheme [Default: gruvbox-dark]
 
-# Set a value in the 3rf part of in-built 'gitmux' widget
+# Set a value in the 3rf part of built-in 'gitmux' widget
 set -g @tms-gitmux-p3-value "#{?#(gitmux #{pane_current_path}), #(gitmux -cfg $HOME/.config/gitmux/.gitmux.conf #{pane_current_path}),}"
 
-set -ag status-left "#{E:@tms-session-3-widget}" # Add in-built 'session' widget to status-left with 3 parts
+set -ag status-left "#{E:@tms-session-3-widget}" # Add built-in 'session' widget to status-left with 3 parts
 
-set -ag status-right "#{E:@tms-gitmux-widget}" # Add in-built 'gitmux' widget to status-right with default amount of parts (4)
-set -ag status-right "#{E:@tms-directory-widget}" # Add in-built 'directory' widget to status-right with default amount of parts (4)
-set -ag status-right "#{E:@tms-date-time-widget}" # Add in-built 'date-time' widget to status-right with default amount of parts (4)
+set -ag status-right "#{E:@tms-gitmux-widget}" # Add built-in 'gitmux' widget to status-right with default amount of parts (4)
+set -ag status-right "#{E:@tms-directory-widget}" # Add built-in 'directory' widget to status-right with default amount of parts (4)
+set -ag status-right "#{E:@tms-date-time-widget}" # Add built-in 'date-time' widget to status-right with default amount of parts (4)
 
 set -g window-status-current-format "#{E:@tms-current-window-widget}" # Customize default TMUX current window widget with gruvbox-dark theme (contains 4 parts)
 set -g window-status-format "#{E:@tms-default-window-widget}" # Customize default TMUX window widget with gruvbox-dark theme (contains 4 parts)
