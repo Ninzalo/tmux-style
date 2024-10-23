@@ -42,6 +42,32 @@ run '~/.tmux/plugins/tpm/tpm'
 </ul>
 <p>Customize the widget with <code>set -g @tms-[your-widget-name]-p[part-number]-[parameter] "[value]"</code></p>
 
+<h2 align="center">Colorschemes</h2>
+<h3>Use in-built colorschemes</h3>
+
+```sh
+# tmux.conf
+# ...
+
+set -g @tms-colorscheme "gruvbox-dark" # Load in-built 'gruvbox-dark' colorscheme [Default: gruvbox-dark]
+
+# ...
+```
+
+<h3>Add custom colorscheme</h3>
+<p>You can also add your own colorscheme to <code>tmux.conf</code> by specifying colorscheme path in <code>@tms-custom-colorscheme-path</code> variable</p>
+
+```sh
+# tmux.conf
+# ...
+
+set -g @tms-custom-colorscheme-path "#{d:current_file}/custom.conf" # Load 'custom' colorscheme
+
+# ...
+```
+> [!IMPORTANT]
+> Specifying `@tms-colorscheme` is not needed while using custom colorscheme. `@tms-custom-colorscheme-path` will overwrite `@tms-colorscheme`
+
 <h2 align="center">In-built widgets</h2>
 <ol>
     <li>Gruvbox-dark</li>
