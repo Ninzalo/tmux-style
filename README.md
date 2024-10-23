@@ -56,7 +56,7 @@ run '~/.tmux/plugins/tpm/tpm'
 </ol>
 
 <h2 align="center">Examples</h2>
-<h3>Config 1 (used in this <a href='https://github.com/Ninzalo/dotfiles-tmux/blob/dc84bcc766e71bc1799f51649cdca09d95260625/tmux.conf#L84-L101'>tmux.conf</a>)</h3>
+<h3>Config 1 (used in this <a href='https://github.com/Ninzalo/dotfiles-tmux/blob/5a1c88f9f2cc05bcc50ca6963bc81588bcc0cfa1/tmux.conf#L84-L101'>tmux.conf</a>)</h3>
 <img src='./assets/config1.png' height='16'/>
 
 ```sh
