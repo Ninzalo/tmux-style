@@ -44,7 +44,7 @@ run '~/.tmux/plugins/tpm/tpm'
 
 <h2 align="center">In-built widgets</h2>
 <ol>
-    <li>Gruvbox</li>
+    <li>Gruvbox-dark</li>
     <ul>
         <li>session: <img src='./assets/session.png' height='12'/></li>
         <li>current-window: <img src='./assets/current-window.png' height='12'/></li>
@@ -66,7 +66,7 @@ run '~/.tmux/plugins/tpm/tpm'
 set -g status-left "" # Clear status-left
 set -g status-right "" # Clear status-right
 
-set -g @tms-colorscheme "gruvbox" # Load 'gruvbox' colorscheme [Default: gruvbox]
+set -g @tms-colorscheme "gruvbox-dark" # Load 'gruvbox-dark' colorscheme [Default: gruvbox-dark]
 
 # Set a value in the 3rf part of in-built 'gitmux' widget
 set -g @tms-gitmux-p3-value "#{?#(gitmux #{pane_current_path}), #(gitmux -cfg $HOME/.config/gitmux/.gitmux.conf #{pane_current_path}),}"
@@ -77,8 +77,8 @@ set -ag status-right "#{E:@tms-gitmux-widget}" # Add in-built 'gitmux' widget to
 set -ag status-right "#{E:@tms-directory-widget}" # Add in-built 'directory' widget to status-right with default amount of parts (4)
 set -ag status-right "#{E:@tms-date-time-widget}" # Add in-built 'date-time' widget to status-right with default amount of parts (4)
 
-set -g window-status-current-format "#{E:@tms-current-window-widget}" # Customize default TMUX current window widget with gruvbox theme (contains 4 parts)
-set -g window-status-format "#{E:@tms-default-window-widget}" # Customize default TMUX window widget with gruvbox theme (contains 4 parts)
+set -g window-status-current-format "#{E:@tms-current-window-widget}" # Customize default TMUX current window widget with gruvbox-dark theme (contains 4 parts)
+set -g window-status-format "#{E:@tms-default-window-widget}" # Customize default TMUX window widget with gruvbox-dark theme (contains 4 parts)
 
 # ...
 ```
