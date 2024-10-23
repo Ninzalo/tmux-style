@@ -7,13 +7,13 @@ fi
 
 PLUGIN_NAME=$1
 WIDGET_NAME=$2
-PARAMS_AMOUNT=$3
+PARTS_AMOUNT=$3
 ORIGINAL_WIDGET=$4
 
 echo "Setting widget options for: PLUGIN_NAME=$PLUGIN_NAME, \
-  WIDGET_NAME=$WIDGET_NAME, PARAMS_AMOUNT=$PARAMS_AMOUNT"
+  WIDGET_NAME=$WIDGET_NAME, PARTS_AMOUNT=$PARTS_AMOUNT"
 
-for ITERATION in $(seq 1 "$PARAMS_AMOUNT"); do
+for ITERATION in $(seq 1 "$PARTS_AMOUNT"); do
   tmux set-option -ogq @${PLUGIN_NAME}-${WIDGET_NAME}-p${ITERATION}-value ""
   if [ $? -ne 0 ]; then
     echo "Error: Failed to set option "\
@@ -37,7 +37,7 @@ for ITERATION in $(seq 1 "$PARAMS_AMOUNT"); do
 done
 
 WIDGET_FORMAT=""
-for ITERATION in $(seq 1 "$PARAMS_AMOUNT"); do
+for ITERATION in $(seq 1 "$PARTS_AMOUNT"); do
   WIDGET_FORMAT+="#[fg=#{@${PLUGIN_NAME}-${WIDGET_NAME}-p${ITERATION}-fg},"
   WIDGET_FORMAT+="bg=#{@${PLUGIN_NAME}-${WIDGET_NAME}-p${ITERATION}-bg}]"
   WIDGET_FORMAT+="#{@${PLUGIN_NAME}-${WIDGET_NAME}-p${ITERATION}-value}"
@@ -51,4 +51,4 @@ if [ $? -ne 0 ]; then
 fi
 
 echo "Successfully set widget options for: $WIDGET_NAME"\
-  "with PARAMS_AMOUNT=$PARAMS_AMOUNT"
+  "with PARTS_AMOUNT=$PARTS_AMOUNT"

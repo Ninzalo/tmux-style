@@ -37,28 +37,28 @@ for WIDGET in $WIDGETS; do
     continue
   fi
 
-  PARAMS_AMOUNT=$(echo "$WIDGET" \
+  PARTS_AMOUNT=$(echo "$WIDGET" \
     | sed -n "s/^@$PLUGIN_NAME-.*-\([0-9]\+\)-widget$/\1/p")
 
-  if [ -z "$PARAMS_AMOUNT" ]; then
-    PARAMS_AMOUNT=4
+  if [ -z "$PARTS_AMOUNT" ]; then
+    PARTS_AMOUNT=4
   fi
 
-  if [ "$PARAMS_AMOUNT" -gt 20 ]; then
-    echo "Error: PARAMS_AMOUNT ($PARAMS_AMOUNT) for \
+  if [ "$PARTS_AMOUNT" -gt 20 ]; then
+    echo "Error: PARTS_AMOUNT ($PARTS_AMOUNT) for \
       widget $WIDGET_NAME exceeds 20"
     continue
   fi
 
-  if [ "$PARAMS_AMOUNT" -lt 1 ]; then
-    echo "Error: PARAMS_AMOUNT ($PARAMS_AMOUNT) for \
+  if [ "$PARTS_AMOUNT" -lt 1 ]; then
+    echo "Error: PARTS_AMOUNT ($PARTS_AMOUNT) for \
       widget $WIDGET_NAME is less than 1"
     continue
   fi
 
-  echo "Found widget: $WIDGET_NAME with params amount: $PARAMS_AMOUNT"
+  echo "Found widget: $WIDGET_NAME with params amount: $PARTS_AMOUNT"
   sh "$CURRENT_PATH/utils/set_widget_options.sh" \
-    "$PLUGIN_NAME" "$WIDGET_NAME" "$PARAMS_AMOUNT" "$WIDGET"
+    "$PLUGIN_NAME" "$WIDGET_NAME" "$PARTS_AMOUNT" "$WIDGET"
   
   if [ $? -ne 0 ]; then
     echo "Error: Failed to set widget options for $WIDGET_NAME"
