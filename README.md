@@ -17,13 +17,13 @@ run '~/.tmux/plugins/tpm/tpm'
 <p>You can create your own widget in your <code>tmux.conf</code> file using <code>#{E:@tms-[your-widget-name]-[parts-amount]-widget}</code> format:</p>
 <pre>set -ag status-left "#{E:@tms-[your-widget-name]-[parts-amount]-widget}"</pre>
 
-> [!NOTE]
+> [!WARNING]
 > Up to 20 parts are allowed.
 
-> [!NOTE]
+> [!TIP]
 > `parts-amount` defaults to 4
 
-> [!NOTE]
+> [!TIP]
 > `parts-amount` is not necessary attribute. `#{E:@tms-[your-widget-name]-widget}` is an allowed format. 4 parts will be created as a default (it equals to `#{E:@tms-[your-widget-name]-4-widget}`)
 
 <p>In-built TMUX variables to midify:</p>
