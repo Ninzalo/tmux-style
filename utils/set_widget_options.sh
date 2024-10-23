@@ -13,7 +13,6 @@ ORIGINAL_WIDGET=$4
 echo "Setting widget options for: PLUGIN_NAME=$PLUGIN_NAME, \
   WIDGET_NAME=$WIDGET_NAME, PARAMS_AMOUNT=$PARAMS_AMOUNT"
 
-# Цикл по количеству параметров (от 1 до PARAMS_AMOUNT)
 for ITERATION in $(seq 1 "$PARAMS_AMOUNT"); do
   tmux set-option -ogq @${PLUGIN_NAME}-${WIDGET_NAME}-p${ITERATION}-value ""
   if [ $? -ne 0 ]; then
