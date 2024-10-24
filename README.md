@@ -16,7 +16,7 @@ set -g @plugin 'Ninzalo/tmux-style'
 
 # Your Tmux-style configuration here...
 
-# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+# Initialize Tmux Plugin Manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
 ```
 
@@ -33,7 +33,7 @@ run '~/.tmux/plugins/tpm/tpm'
 > [!TIP]
 > `parts-amount` is not necessary attribute. `#{E:@tms-[your-widget-name]-widget}` is an allowed format. 4 parts will be created as a default (it equals to `#{E:@tms-[your-widget-name]-4-widget}`)
 
-<p>Built-in TMUX variables to midify:</p>
+<p>Built-in tmux variables to midify:</p>
 <ul>
     <li><code>status-left</code></li>
     <li><code>status-right</code></li>
@@ -110,8 +110,8 @@ set -ag status-right "#{E:@tms-gitmux-widget}" # Add built-in 'gitmux' widget to
 set -ag status-right "#{E:@tms-directory-widget}" # Add built-in 'directory' widget to status-right with default amount of parts (4)
 set -ag status-right "#{E:@tms-date-time-widget}" # Add built-in 'date-time' widget to status-right with default amount of parts (4)
 
-set -g window-status-current-format "#{E:@tms-current-window-widget}" # Customize default TMUX current window widget with gruvbox-dark theme (contains 4 parts)
-set -g window-status-format "#{E:@tms-default-window-widget}" # Customize default TMUX window widget with gruvbox-dark theme (contains 4 parts)
+set -g window-status-current-format "#{E:@tms-current-window-widget}" # Customize default tmux current window widget with gruvbox-dark theme (contains 4 parts)
+set -g window-status-format "#{E:@tms-default-window-widget}" # Customize default tmux window widget with gruvbox-dark theme (contains 4 parts)
 
 # ...
 ```
