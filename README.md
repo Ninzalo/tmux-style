@@ -180,3 +180,8 @@ set -ag status-left "#{E:@tms-custom2-2-widget}" # Create default values for 'cu
 
 # ...
 ```
+
+<h2 align='center'>Credits</h2>
+<ul>
+    <li><a href='https://github.com/morhetz'>@morhetz</a> - <a href='https://github.com/morhetz/gruvbox'>gruvbox</a> colorscheme</li>
+</ul>
