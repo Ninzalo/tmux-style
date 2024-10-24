@@ -61,6 +61,12 @@ set -g @tms-colorscheme "gruvbox-dark" # Load built-in 'gruvbox-dark' colorschem
 # ...
 ```
 
+<h4>Existing colorschemes:</h4>
+<ul>
+    <li>gruvbox-dark</li>
+    <li>gruvbox-light</li>
+</ul>
+
 <h3>Add custom colorscheme</h3>
 <p>You can also add your own colorscheme to <code>tmux.conf</code> by specifying colorscheme path in <code>@tms-custom-colorscheme-path</code> variable</p>
 
