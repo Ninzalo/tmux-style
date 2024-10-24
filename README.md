@@ -32,6 +32,15 @@ run '~/.tmux/plugins/tpm/tpm'
         <li>directory: <img src='./assets/gruvbox-dark/directory.png' height='12'/></li>
         <li>date-time: <img src='./assets/gruvbox-dark/date-time.png' height='12'/></li>
     </ul>
+    <li>Gruvbox-light</li>
+    <ul>
+        <li>session: <img src='./assets/gruvbox-light/gruvbox-light-session.png' height='12'/></li>
+        <li>current-window: <img src='./assets/gruvbox-light/gruvbox-light-current-window.png' height='12'/></li>
+        <li>default-window: <img src='./assets/gruvbox-light/gruvbox-light-default-window.png' height='12'/></li>
+        <li>gitmux: <img src='./assets/gruvbox-light/gruvbox-light-gitmux.png' height='12'/> (requires <a href='https://github.com/arl/gitmux'>gitmux</a> to be installed)</li>
+        <li>directory: <img src='./assets/gruvbox-light/gruvbox-light-directory.png' height='12'/></li>
+        <li>date-time: <img src='./assets/gruvbox-light/gruvbox-light-date-time.png' height='12'/></li>
+    </ul>
 </ol>
 
 <h3>Create a widget</h3>
