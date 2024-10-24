@@ -20,18 +20,17 @@ set -g @plugin 'Ninzalo/tmux-style'
 run '~/.tmux/plugins/tpm/tpm'
 ```
 
-
 <h2 align="center">Widgets</h2>
 <h3>Built-in widgets</h3>
 <ol>
     <li>Gruvbox-dark</li>
     <ul>
-        <li>session: <img src='./assets/session.png' height='12'/></li>
-        <li>current-window: <img src='./assets/current-window.png' height='12'/></li>
-        <li>default-window: <img src='./assets/default-window.png' height='12'/></li>
-        <li>gitmux: <img src='./assets/gitmux.png' height='12'/> (requires <a href='https://github.com/arl/gitmux'>gitmux</a> to be installed)</li>
-        <li>directory: <img src='./assets/directory.png' height='12'/></li>
-        <li>date-time: <img src='./assets/date-time.png' height='12'/></li>
+        <li>session: <img src='./assets/gruvbox-dark/session.png' height='12'/></li>
+        <li>current-window: <img src='./assets/gruvbox-dark/current-window.png' height='12'/></li>
+        <li>default-window: <img src='./assets/gruvbox-dark/default-window.png' height='12'/></li>
+        <li>gitmux: <img src='./assets/gruvbox-dark/gitmux.png' height='12'/> (requires <a href='https://github.com/arl/gitmux'>gitmux</a> to be installed)</li>
+        <li>directory: <img src='./assets/gruvbox-dark/directory.png' height='12'/></li>
+        <li>date-time: <img src='./assets/gruvbox-dark/date-time.png' height='12'/></li>
     </ul>
 </ol>
 
@@ -98,7 +97,7 @@ set -g @tms-custom-colorscheme-path "#{d:current_file}/custom.conf" # Load 'cust
 
 <h2 align="center">Examples</h2>
 <h3>Config 1 (used in this <a href='https://github.com/Ninzalo/dotfiles-tmux/blob/5a1c88f9f2cc05bcc50ca6963bc81588bcc0cfa1/tmux.conf#L84-L101'>tmux.conf</a>)</h3>
-<img src='./assets/config1.png' height='16'/>
+<img src='./assets/configs/config1.png' height='16'/>
 
 ```sh
 # tmux.conf
@@ -125,7 +124,7 @@ set -g window-status-format "#{E:@tms-default-window-widget}" # Customize defaul
 ```
 
 <h3>Config 2</h3>
-<img src='./assets/config2.png' height='30'/>
+<img src='./assets/configs/config2.png' height='30'/>
 
 ```sh
 # tmux.conf
@@ -153,7 +152,7 @@ set -ag status-left "#{E:@tms-custom-widget}" # Create default values for 'custo
 ```
 
 <h3>Config 3</h3>
-<img src='./assets/config3.png' height='30'/>
+<img src='./assets/configs/config3.png' height='30'/>
 
 ```sh
 # tmux.conf
