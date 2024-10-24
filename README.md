@@ -20,7 +20,22 @@ set -g @plugin 'Ninzalo/tmux-style'
 run '~/.tmux/plugins/tpm/tpm'
 ```
 
-<h2 align='center'>Create a widget</h2>
+
+<h2 align="center">Widgets</h2>
+<h3>Built-in widgets</h3>
+<ol>
+    <li>Gruvbox-dark</li>
+    <ul>
+        <li>session: <img src='./assets/session.png' height='12'/></li>
+        <li>current-window: <img src='./assets/current-window.png' height='12'/></li>
+        <li>default-window: <img src='./assets/default-window.png' height='12'/></li>
+        <li>gitmux: <img src='./assets/gitmux.png' height='12'/> (requires <a href='https://github.com/arl/gitmux'>gitmux</a> to be installed)</li>
+        <li>directory: <img src='./assets/directory.png' height='12'/></li>
+        <li>date-time: <img src='./assets/date-time.png' height='12'/></li>
+    </ul>
+</ol>
+
+<h3>Create a widget</h3>
 <p>You can create your own widget in your <code>tmux.conf</code> file using <code>#{E:@tms-[your-widget-name]-[parts-amount]-widget}</code> format:</p>
 <pre>set -ag status-left "#{E:@tms-[your-widget-name]-[parts-amount]-widget}"</pre>
 
@@ -80,19 +95,6 @@ set -g @tms-custom-colorscheme-path "#{d:current_file}/custom.conf" # Load 'cust
 ```
 > [!IMPORTANT]
 > Specifying `@tms-colorscheme` is not needed while using custom colorscheme. `@tms-custom-colorscheme-path` will overwrite `@tms-colorscheme`
-
-<h2 align="center">Built-in widgets</h2>
-<ol>
-    <li>Gruvbox-dark</li>
-    <ul>
-        <li>session: <img src='./assets/session.png' height='12'/></li>
-        <li>current-window: <img src='./assets/current-window.png' height='12'/></li>
-        <li>default-window: <img src='./assets/default-window.png' height='12'/></li>
-        <li>gitmux: <img src='./assets/gitmux.png' height='12'/> (requires <a href='https://github.com/arl/gitmux'>gitmux</a> to be installed)</li>
-        <li>directory: <img src='./assets/directory.png' height='12'/></li>
-        <li>date-time: <img src='./assets/date-time.png' height='12'/></li>
-    </ul>
-</ol>
 
 <h2 align="center">Examples</h2>
 <h3>Config 1 (used in this <a href='https://github.com/Ninzalo/dotfiles-tmux/blob/5a1c88f9f2cc05bcc50ca6963bc81588bcc0cfa1/tmux.conf#L84-L101'>tmux.conf</a>)</h3>
