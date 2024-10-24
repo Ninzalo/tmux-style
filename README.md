@@ -1,4 +1,11 @@
 <h1 align="center">Tmux-style</h1>
+<h2 align="center">Requirements:</h2>
+<ul>
+    <li>POSIX-compatible shell</li>
+    <li><a href='https://github.com/tmux/tmux'>tmux</a></li>
+    <li><a href='https://www.gnu.org/software/sed/#download'>sed</a></li>
+</ul>
+
 <h2 align="center">Installation</h2>
 <h3>Using <a href='https://github.com/tmux-plugins/tpm'>TPM</a></h3>
 
