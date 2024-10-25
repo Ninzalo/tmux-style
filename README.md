@@ -1,5 +1,17 @@
-<h1 align="center">Tmux-style</h1>
+<h1 align="center">Tmux-style: Transform Your Tmux Status Line with 
+    Themes & Dynamic Widgets
+</h1>
+<p> Tmux-style is the ultimate tmux plugin for deep customization of your
+    status line. With Tmux-style, easily apply beautiful, ready-made themes,
+    or craft your own custom colorschemes for a look that’s all your own.
+    Build powerful widgets that showcase dynamic data at a glance, and
+    experience unparalleled flexibility with configuration options that let
+    you control colors, styles, and layouts. Make your tmux workspace as
+    productive—and unique—as you are.
+</p>
+
 <h2 align="center">Requirements:</h2>
+<p>To get started with Tmux-style, make sure you have the following:</p>
 <ul>
     <li>POSIX-compatible shell</li>
     <li><a href='https://github.com/tmux/tmux'>tmux</a></li>
@@ -7,7 +19,8 @@
 </ul>
 
 <h2 align="center">Installation</h2>
-<h3>Using <a href='https://github.com/tmux-plugins/tpm'>TPM</a></h3>
+<h3>Using <a href='https://github.com/tmux-plugins/tpm'>TPM (Tmux Plugin Manager)</a></h3>
+<p>To install Tmux-style using TPM, follow these steps:</p>
 
 ```sh
 # tmux.conf
@@ -21,7 +34,8 @@ run '~/.tmux/plugins/tpm/tpm'
 ```
 
 <h2 align="center">Widgets</h2>
-<h3>Built-in widgets</h3>
+<h3>Built-in Widgets</h3>
+<p>Tmux-style includes several pre-built widgets that can be used as a part of your status line:</p>
 <ol>
     <li>Gruvbox-dark</li>
     <ul>
@@ -42,38 +56,63 @@ run '~/.tmux/plugins/tpm/tpm'
         <li>date-time: <img src='./assets/gruvbox-light/gruvbox-light-date-time.png' height='12'/></li>
     </ul>
 </ol>
+<p>These widgets bring a visually appealing and highly functional status line 
+    to your tmux configuration.
+</p>
 
-<h3>Create a widget</h3>
-<p>You can create your own widget in your <code>tmux.conf</code> file using <code>#{E:@tms-[your-widget-name]-[parts-amount]-widget}</code> format:</p>
+<h3>Create Your Own Widget</h3>
+<p>You can create custom widgets directly in your <code>tmux.conf</code> file. 
+    Use the format <code>#{E:@tms-[your-widget-name]-[parts-amount]-widget}</code> to define a new widget:
+</p>
 <pre>set -ag status-left "#{E:@tms-[your-widget-name]-[parts-amount]-widget}"</pre>
 
-> [!WARNING]
-> Up to 20 parts are allowed.
+> [!NOTE]
+> The `parts-amount` attribute specifies the number of parts, defaulting to 4. You can create up to 20 parts.
 
-> [!TIP]
-> `parts-amount` defaults to 4
-
-> [!TIP]
-> `parts-amount` is not necessary attribute. `#{E:@tms-[your-widget-name]-widget}` is an allowed format. 4 parts will be created as a default (it equals to `#{E:@tms-[your-widget-name]-4-widget}`)
-
-<p>Built-in tmux variables to midify:</p>
+<p>Supported tmux variables for widget placement:</p>
 <ul>
     <li><code>status-left</code></li>
     <li><code>status-right</code></li>
     <li><code>window-status-format</code></li>
     <li><code>window-status-current-format</code></li>
 </ul>
-<p>All of the widget parameters will be created automatically. Run <code>tmux show-options -g</code> command to check it.</p>
-<p>Auto-created parameters for each part:</p>
+
+<p>Each widget part comes with pre-defined parameters that are automatically 
+    created in your configuration, allowing for simple yet powerful 
+    customization without the need for extensive setup. For each part in a 
+    widget, the following parameters are generated:
+</p>
 <ul>
-    <li><code>@tms-[your-widget-name]-p[part-number]-value ""</code></li>
-    <li><code>@tms-[your-widget-name]-p[part-number]-fg ""</code></li>
-    <li><code>@tms-[your-widget-name]-p[part-number]-bg ""</code></li>
+    <li>Value (<code>@tms-[your-widget-name]-p[part-number]-value</code>)</li>
+    <li>Foreground color (<code>@tms-[your-widget-name]-p[part-number]-fg</code>)</li>
+    <li>Background color (<code>@tms-[your-widget-name]-p[part-number]-bg</code>)</li>
 </ul>
-<p>Customize the widget with <code>set -g @tms-[your-widget-name]-p[part-number]-[parameter] "[value]"</code></p>
+<p>To check automatically generated parameters, run:</p>
+
+```sh
+tmux show-options -g
+```
+
+<p>Each of these parameters can be customized directly in your tmux.conf file.
+    To set a unique style for each part, specify the desired value
+    (<code>value</code>), foreground color (<code>fg</code>), and 
+    background color (<code>bg</code>), as shown below:
+</p>
+
+```sh
+# Customize a part of your widget
+set -g @tms-[your-widget-name]-p[part-number]-value "Your Text or Command Here"
+set -g @tms-[your-widget-name]-p[part-number]-fg "green"
+set -g @tms-[your-widget-name]-p[part-number]-bg "black"
+```
+
+<p>This flexibility allows you to modify colors and text for each widget part,
+    fitting any theme or personal preference effortlessly.
+</p>
 
 <h2 align="center">Colorschemes</h2>
-<h3>Use built-in colorschemes</h3>
+<h3>Using Built-in Colorschemes</h3>
+<p>Apply a built-in colorscheme by setting the @tms-colorscheme variable:</p>
 
 ```sh
 # tmux.conf
@@ -84,27 +123,27 @@ set -g @tms-colorscheme "gruvbox-dark" # Load built-in 'gruvbox-dark' colorschem
 # ...
 ```
 
-<h4>Existing colorschemes:</h4>
+<h4>Available colorschemes:</h4>
 <ul>
     <li>gruvbox-dark</li>
     <li>gruvbox-light</li>
 </ul>
 
-<h3>Add custom colorscheme</h3>
-<p>You can also add your own colorscheme to <code>tmux.conf</code> by specifying colorscheme path in <code>@tms-custom-colorscheme-path</code> variable</p>
+<h3>Adding a Custom Colorscheme</h3>
+<p>You can specify your own colorscheme file path in the <code>@tms-custom-colorscheme-path</code> variable in <code>tmux.conf</code>:</p>
 
 ```sh
 # tmux.conf
 # ...
 
-set -g @tms-custom-colorscheme-path "#{d:current_file}/custom.conf" # Load 'custom' colorscheme
+set -g @tms-custom-colorscheme-path "/path/to/custom.conf" # Load 'custom' colorscheme
 
 # ...
 ```
 > [!IMPORTANT]
-> Specifying `@tms-colorscheme` is not needed while using custom colorscheme. `@tms-custom-colorscheme-path` will overwrite `@tms-colorscheme`
+> When using a custom colorscheme, you don’t need to set <code>@tms-colorscheme</code> as it will be overridden.
 
-<h2 align="center">Examples</h2>
+<h2 align="center">Example Configurations</h2>
 <h3>Config 1 (used in this <a href='https://github.com/Ninzalo/dotfiles-tmux/blob/5a1c88f9f2cc05bcc50ca6963bc81588bcc0cfa1/tmux.conf#L84-L101'>tmux.conf</a>)</h3>
 <img src='./assets/configs/config1.png' height='16'/>
 
@@ -115,19 +154,23 @@ set -g @tms-custom-colorscheme-path "#{d:current_file}/custom.conf" # Load 'cust
 set -g status-left "" # Clear status-left
 set -g status-right "" # Clear status-right
 
-set -g @tms-colorscheme "gruvbox-dark" # Load 'gruvbox-dark' colorscheme [Default: gruvbox-dark]
+# Use Gruvbox-dark theme
+set -g @tms-colorscheme "gruvbox-dark"
 
-# Set a value in the 3rf part of built-in 'gitmux' widget
+# Set a value in the 3rd part of built-in 'gitmux' widget
 set -g @tms-gitmux-p3-value "#{?#(gitmux #{pane_current_path}), #(gitmux -cfg $HOME/.config/gitmux/.gitmux.conf #{pane_current_path}),}"
 
-set -ag status-left "#{E:@tms-session-3-widget}" # Add built-in 'session' widget to status-left with 3 parts
+# Add session widget to status-left with 3 parts
+set -ag status-left "#{E:@tms-session-3-widget}"
 
-set -ag status-right "#{E:@tms-gitmux-widget}" # Add built-in 'gitmux' widget to status-right with default amount of parts (4)
-set -ag status-right "#{E:@tms-directory-widget}" # Add built-in 'directory' widget to status-right with default amount of parts (4)
-set -ag status-right "#{E:@tms-date-time-widget}" # Add built-in 'date-time' widget to status-right with default amount of parts (4)
+# Customize built-in widgets in status-right
+set -ag status-right "#{E:@tms-gitmux-widget}"
+set -ag status-right "#{E:@tms-directory-widget}"
+set -ag status-right "#{E:@tms-date-time-widget}"
 
-set -g window-status-current-format "#{E:@tms-current-window-widget}" # Customize default tmux current window widget with gruvbox-dark theme (contains 4 parts)
-set -g window-status-format "#{E:@tms-default-window-widget}" # Customize default tmux window widget with gruvbox-dark theme (contains 4 parts)
+# Customize window widgets with gruvbox-dark theme
+set -g window-status-current-format "#{E:@tms-current-window-widget}"
+set -g window-status-format "#{E:@tms-default-window-widget}"
 
 # ...
 ```
@@ -141,6 +184,7 @@ set -g window-status-format "#{E:@tms-default-window-widget}" # Customize defaul
 
 set -g status-left "" # Clear status-left
 
+# Define a custom widget
 set -g @tms-custom-p1-value "▜" # Set "▜" as a value in the 1st part of 'custom' widget
 set -g @tms-custom-p1-fg "#ffffff" # Set white as foreground color in the 1st part of 'custom' widget
 set -g @tms-custom-p1-bg "#{E:@tms-thm-bg}" # Set @tms-thm-bg as background color in the 1st part of 'custom' widget
@@ -154,6 +198,7 @@ set -g @tms-custom-p4-value "█▛"
 set -g @tms-custom-p4-fg "#{E:@tms-custom-p3-bg}"
 set -g @tms-custom-p4-bg "#{E:@tms-custom-p1-bg}"
 
+# Add custom widget to status-left
 set -ag status-left "#{E:@tms-custom-widget}" # Create default values for 'custom' widget with default amount of parts (4)
 # Or: set -ag status-left "#{E:@tms-custom-4-widget}" # Gives the same result
 
@@ -169,6 +214,7 @@ set -ag status-left "#{E:@tms-custom-widget}" # Create default values for 'custo
 
 set -g status-left "" # Clear status-left
 
+# Define another custom widget with 2 parts
 set -g @tms-custom2-p1-value "▟"
 set -g @tms-custom2-p1-fg "white"
 set -g @tms-custom2-p1-bg "#{E:@tms-thm-bg}"
@@ -176,6 +222,7 @@ set -g @tms-custom2-p2-value "   my second custom widget"
 set -g @tms-custom2-p2-fg "red"
 set -g @tms-custom2-p2-bg "#{E:@tms-thm-bg}"
 
+# Add custom widget to status-left
 set -ag status-left "#{E:@tms-custom2-2-widget}" # Create default values for 'custom2' widget with 2 parts
 
 # ...
