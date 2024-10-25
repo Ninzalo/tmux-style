@@ -14,21 +14,21 @@ echo "Setting widget options for: PLUGIN_NAME=$PLUGIN_NAME, \
   WIDGET_NAME=$WIDGET_NAME, PARTS_AMOUNT=$PARTS_AMOUNT"
 
 for ITERATION in $(seq 1 "$PARTS_AMOUNT"); do
-  tmux set-option -ogq @${PLUGIN_NAME}-${WIDGET_NAME}-p${ITERATION}-value ""
+  tmux set-option -ogq @${PLUGIN_NAME}-${WIDGET_NAME}-p${ITERATION}-value "${ITERATION}"
   if [ $? -ne 0 ]; then
     echo "Error: Failed to set option "\
       "@${PLUGIN_NAME}-${WIDGET_NAME}-p${ITERATION}-value"
     exit 1
   fi
 
-  tmux set-option -ogq @${PLUGIN_NAME}-${WIDGET_NAME}-p${ITERATION}-fg ""
+  tmux set-option -ogq @${PLUGIN_NAME}-${WIDGET_NAME}-p${ITERATION}-fg "#ffffff"
   if [ $? -ne 0 ]; then
     echo "Error: Failed to set option "\
       "@${PLUGIN_NAME}-${WIDGET_NAME}-p${ITERATION}-fg"
     exit 1
   fi
 
-  tmux set-option -ogq @${PLUGIN_NAME}-${WIDGET_NAME}-p${ITERATION}-bg ""
+  tmux set-option -ogq @${PLUGIN_NAME}-${WIDGET_NAME}-p${ITERATION}-bg "#000000"
   if [ $? -ne 0 ]; then
     echo "Error: Failed to set option "\
       "@${PLUGIN_NAME}-${WIDGET_NAME}-p${ITERATION}-bg"
