@@ -36,26 +36,14 @@ run '~/.tmux/plugins/tpm/tpm'
 <h2 align="center">Widgets</h2>
 <h3>Built-in Widgets</h3>
 <p>Tmux-style includes several pre-built widgets that can be used as a part of your status line:</p>
-<ol>
-    <li>Gruvbox-dark</li>
-    <ul>
-        <li>session: <img src='./assets/gruvbox-dark/session.png' height='12'/></li>
-        <li>current-window: <img src='./assets/gruvbox-dark/current-window.png' height='12'/></li>
-        <li>default-window: <img src='./assets/gruvbox-dark/default-window.png' height='12'/></li>
-        <li>gitmux: <img src='./assets/gruvbox-dark/gitmux.png' height='12'/> (requires <a href='https://github.com/arl/gitmux'>gitmux</a> to be installed)</li>
-        <li>directory: <img src='./assets/gruvbox-dark/directory.png' height='12'/></li>
-        <li>date-time: <img src='./assets/gruvbox-dark/date-time.png' height='12'/></li>
-    </ul>
-    <li>Gruvbox-light</li>
-    <ul>
-        <li>session: <img src='./assets/gruvbox-light/gruvbox-light-session.png' height='12'/></li>
-        <li>current-window: <img src='./assets/gruvbox-light/gruvbox-light-current-window.png' height='12'/></li>
-        <li>default-window: <img src='./assets/gruvbox-light/gruvbox-light-default-window.png' height='12'/></li>
-        <li>gitmux: <img src='./assets/gruvbox-light/gruvbox-light-gitmux.png' height='12'/> (requires <a href='https://github.com/arl/gitmux'>gitmux</a> to be installed)</li>
-        <li>directory: <img src='./assets/gruvbox-light/gruvbox-light-directory.png' height='12'/></li>
-        <li>date-time: <img src='./assets/gruvbox-light/gruvbox-light-date-time.png' height='12'/></li>
-    </ul>
-</ol>
+<ul>
+    <li>session</li>
+    <li>current-window</li>
+    <li>default-window</li>
+    <li>gitmux (requires <a href='https://github.com/arl/gitmux'>gitmux</a> to be installed)</li>
+    <li>directory</li>
+    <li>date-time</li>
+</ul>
 <p>These widgets bring a visually appealing and highly functional status line 
     to your tmux configuration.
 </p>
