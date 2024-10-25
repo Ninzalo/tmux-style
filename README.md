@@ -114,7 +114,9 @@ set -g @tms-colorscheme "gruvbox-dark" # Load built-in 'gruvbox-dark' colorschem
 <h4>Available colorschemes:</h4>
 <ul>
     <li>gruvbox-dark</li>
+    <img src='./assets/configs/config1.png' height='15'/>
     <li>gruvbox-light</li>
+    <img src='./assets/colorschemes/gruvbox-light.png' height='15'/>
 </ul>
 
 <h3>Adding a Custom Colorscheme</h3>
