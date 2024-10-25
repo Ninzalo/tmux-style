@@ -106,7 +106,8 @@ set -g @tms-[your-widget-name]-p[part-number]-bg "black"
 # tmux.conf
 # ...
 
-set -g @tms-colorscheme "gruvbox-dark" # Load built-in 'gruvbox-dark' colorscheme [Default: gruvbox-dark]
+# Load built-in 'gruvbox-dark' colorscheme [Default: gruvbox-dark]
+set -g @tms-colorscheme "gruvbox-dark"
 
 # ...
 ```
@@ -126,7 +127,8 @@ set -g @tms-colorscheme "gruvbox-dark" # Load built-in 'gruvbox-dark' colorschem
 # tmux.conf
 # ...
 
-set -g @tms-custom-colorscheme-path "/path/to/custom.conf" # Load 'custom' colorscheme
+# Load 'custom' colorscheme
+set -g @tms-custom-colorscheme-path "/path/to/custom.conf"
 
 # ...
 ```
@@ -150,15 +152,15 @@ set -g @tms-colorscheme "gruvbox-dark"
 # Set a value in the 3rd part of built-in 'gitmux' widget
 set -g @tms-gitmux-p3-value "#{?#(gitmux #{pane_current_path}), #(gitmux -cfg $HOME/.config/gitmux/.gitmux.conf #{pane_current_path}),}"
 
-# Add session widget to status-left with 3 parts
+# Add built-in 'session' widget to status-left with 3 parts
 set -ag status-left "#{E:@tms-session-3-widget}"
 
-# Customize built-in widgets in status-right
+# Add built-in widgets to status-right
 set -ag status-right "#{E:@tms-gitmux-widget}"
 set -ag status-right "#{E:@tms-directory-widget}"
 set -ag status-right "#{E:@tms-date-time-widget}"
 
-# Customize window widgets with gruvbox-dark theme
+# Add built-in window widgets
 set -g window-status-current-format "#{E:@tms-current-window-widget}"
 set -g window-status-format "#{E:@tms-default-window-widget}"
 
@@ -174,7 +176,7 @@ set -g window-status-format "#{E:@tms-default-window-widget}"
 
 set -g status-left "" # Clear status-left
 
-# Define a custom widget
+# Define a 'custom' widget parameters
 set -g @tms-custom-p1-value "▜" # Set "▜" as a value in the 1st part of 'custom' widget
 set -g @tms-custom-p1-fg "#ffffff" # Set white as foreground color in the 1st part of 'custom' widget
 set -g @tms-custom-p1-bg "#{E:@tms-thm-bg}" # Set @tms-thm-bg as background color in the 1st part of 'custom' widget
@@ -188,7 +190,7 @@ set -g @tms-custom-p4-value "█▛"
 set -g @tms-custom-p4-fg "#{E:@tms-custom-p3-bg}"
 set -g @tms-custom-p4-bg "#{E:@tms-custom-p1-bg}"
 
-# Add custom widget to status-left
+# Add 'custom' widget to status-left
 set -ag status-left "#{E:@tms-custom-widget}" # Create default values for 'custom' widget with default amount of parts (4)
 # Or: set -ag status-left "#{E:@tms-custom-4-widget}" # Gives the same result
 
@@ -204,7 +206,7 @@ set -ag status-left "#{E:@tms-custom-widget}" # Create default values for 'custo
 
 set -g status-left "" # Clear status-left
 
-# Define another custom widget with 2 parts
+# Define 'custom2' widget parameters
 set -g @tms-custom2-p1-value "▟"
 set -g @tms-custom2-p1-fg "white"
 set -g @tms-custom2-p1-bg "#{E:@tms-thm-bg}"
@@ -212,7 +214,7 @@ set -g @tms-custom2-p2-value "   my second custom widget"
 set -g @tms-custom2-p2-fg "red"
 set -g @tms-custom2-p2-bg "#{E:@tms-thm-bg}"
 
-# Add custom widget to status-left
+# Add 'custom2' widget to status-left
 set -ag status-left "#{E:@tms-custom2-2-widget}" # Create default values for 'custom2' widget with 2 parts
 
 # ...
