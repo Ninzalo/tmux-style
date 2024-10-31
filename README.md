@@ -136,8 +136,9 @@ set -g @tms-colorscheme "gruvbox-dark"
 
 > [!NOTE]
 > Built-in colorschemes are designed to work exclusively with all built-in
-    widgets and apply specifically to <code>status-bg</code> and
-    <code>status-fg</code> in your `tmux.conf`. For custom styling beyond these
+    widgets and default tmux variables, such as: <code>status-bg</code>,
+    <code>status-fg</code>, <code>message-style</code> and
+    <code>message-command-style</code>. For custom styling beyond these
     settings, consider using a custom colorscheme.
 
 <h3>Adding a Custom Colorscheme</h3>
