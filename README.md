@@ -251,5 +251,13 @@ set -ag status-left "#{E:@tms-custom2-2-widget}" # Create default values for 'cu
             @morhetz
         </a> - <a href='https://github.com/morhetz/gruvbox'>
             gruvbox
-        </a> colorscheme</li>
+        </a> colorscheme
+    </li>
+    <li>
+        <a href='https://github.com/catppuccin'>
+            @catppuccin
+        </a> - <a href='https://github.com/catppuccin/tmux'>
+            catppuccin
+        </a> colorscheme
+    </li>
 </ul>
