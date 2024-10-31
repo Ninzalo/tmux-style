@@ -112,7 +112,9 @@ set -g @tmst-[your-widget-name]-p[part-number]-bg "black"
 
 <h2 align="center">Colorschemes</h2>
 <h3>Using Built-in Colorschemes</h3>
-<p>Apply a built-in colorscheme by setting the @tmst-colorscheme variable:</p>
+<p>Apply a built-in colorscheme by setting the
+    <code>@tmst-colorscheme</code> variable:
+</p>
 
 ```sh
 # tmux.conf
