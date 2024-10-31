@@ -120,6 +120,12 @@ set -g @tms-colorscheme "gruvbox-dark"
     <img src='./assets/colorschemes/gruvbox-light.png' height='16'/>
 </ul>
 
+> [!NOTE]
+> Built-in colorschemes are designed to work exclusively with all built-in
+    widgets and apply specifically to <code>status-bg</code> and
+    <code>status-fg</code> in your `tmux.conf`. For custom styling beyond these
+    settings, consider using a custom colorscheme.
+
 <h3>Adding a Custom Colorscheme</h3>
 <p>You can specify your own colorscheme file path in the <code>@tms-custom-colorscheme-path</code> variable in <code>tmux.conf</code>:</p>
 
