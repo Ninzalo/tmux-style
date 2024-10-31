@@ -130,6 +130,8 @@ set -g @tms-colorscheme "gruvbox-dark"
     <img src='./assets/colorschemes/gruvbox-dark.png' height='16'/>
     <li>gruvbox-light</li>
     <img src='./assets/colorschemes/gruvbox-light.png' height='16'/>
+    <li>catppuccin-mocha</li>
+    <img src='./assets/colorschemes/catppuccin-mocha.png' height='16'/>
 </ul>
 
 > [!NOTE]
