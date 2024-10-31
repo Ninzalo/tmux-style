@@ -35,12 +35,16 @@ run '~/.tmux/plugins/tpm/tpm'
 
 <h2 align="center">Widgets</h2>
 <h3>Built-in Widgets</h3>
-<p>Tmux-style includes several pre-built widgets that can be used as a part of your status line:</p>
+<p>Tmux-style includes several pre-built widgets that can be used as a part of
+    your status line:
+</p>
 <ul>
     <li>session</li>
     <li>current-window</li>
     <li>default-window</li>
-    <li>gitmux (requires <a href='https://github.com/arl/gitmux'>gitmux</a> to be installed)</li>
+    <li>gitmux (requires <a href='https://github.com/arl/gitmux'>gitmux</a>
+        to be installed)
+    </li>
     <li>directory</li>
     <li>date-time</li>
 </ul>
@@ -49,13 +53,17 @@ run '~/.tmux/plugins/tpm/tpm'
 </p>
 
 <h3>Create Your Own Widget</h3>
-<p>You can create custom widgets directly in your <code>tmux.conf</code> file. 
-    Use the format <code>#{E:@tms-[your-widget-name]-[parts-amount]-widget}</code> to define a new widget:
+<p>You can create custom widgets directly in your <code>tmux.conf</code> file.
+</p>
+<p>Use the format
+    <code>#{E:@tms-[your-widget-name]-[parts-amount]-widget}</code>
+    to define a new widget:
 </p>
 <pre>set -ag status-left "#{E:@tms-[your-widget-name]-[parts-amount]-widget}"</pre>
 
 > [!NOTE]
-> The `parts-amount` attribute specifies the number of parts, defaulting to 4. You can create up to 20 parts.
+> The `parts-amount` attribute specifies the number of parts, defaulting to 4.
+    You can create up to 20 parts.
 
 <p>Supported tmux variables for widget placement:</p>
 <ul>
@@ -72,8 +80,12 @@ run '~/.tmux/plugins/tpm/tpm'
 </p>
 <ul>
     <li>Value (<code>@tms-[your-widget-name]-p[part-number]-value</code>)</li>
-    <li>Foreground color (<code>@tms-[your-widget-name]-p[part-number]-fg</code>)</li>
-    <li>Background color (<code>@tms-[your-widget-name]-p[part-number]-bg</code>)</li>
+    <li>Foreground color
+        (<code>@tms-[your-widget-name]-p[part-number]-fg</code>)
+    </li>
+    <li>Background color
+        (<code>@tms-[your-widget-name]-p[part-number]-bg</code>)
+    </li>
 </ul>
 <p>To check automatically generated parameters, run:</p>
 
@@ -127,7 +139,10 @@ set -g @tms-colorscheme "gruvbox-dark"
     settings, consider using a custom colorscheme.
 
 <h3>Adding a Custom Colorscheme</h3>
-<p>You can specify your own colorscheme file path in the <code>@tms-custom-colorscheme-path</code> variable in <code>tmux.conf</code>:</p>
+<p>You can specify your own colorscheme file path in the
+    <code>@tms-custom-colorscheme-path</code> variable in
+    <code>tmux.conf</code>:
+</p>
 
 ```sh
 # tmux.conf
@@ -139,7 +154,8 @@ set -g @tms-custom-colorscheme-path "/path/to/custom.conf"
 # ...
 ```
 > [!IMPORTANT]
-> When using a custom colorscheme, you don’t need to set <code>@tms-colorscheme</code> as it will be overridden.
+> When using a custom colorscheme, you don’t need to set
+    <code>@tms-colorscheme</code> as it will be overridden.
 
 <h2 align="center">Example Configurations</h2>
 <h3>Config 1 (used in this <a href='https://github.com/Ninzalo/dotfiles-tmux/blob/5a1c88f9f2cc05bcc50ca6963bc81588bcc0cfa1/tmux.conf#L84-L101'>tmux.conf</a>)</h3>
@@ -228,5 +244,10 @@ set -ag status-left "#{E:@tms-custom2-2-widget}" # Create default values for 'cu
 
 <h2 align='center'>Credits</h2>
 <ul>
-    <li><a href='https://github.com/morhetz'>@morhetz</a> - <a href='https://github.com/morhetz/gruvbox'>gruvbox</a> colorscheme</li>
+    <li>
+        <a href='https://github.com/morhetz'>
+            @morhetz
+        </a> - <a href='https://github.com/morhetz/gruvbox'>
+            gruvbox
+        </a> colorscheme</li>
 </ul>
