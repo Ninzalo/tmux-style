@@ -1,4 +1,4 @@
-name: Tmux-style Plugin Tests
+name: Tests
 
 on:
   push:
