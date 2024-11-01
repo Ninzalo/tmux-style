@@ -2,8 +2,16 @@ name: Tests
 
 on:
   push:
+    paths-ignore:
+      - "*.md"
+      - "assets/**"
+      - "*.yml"
     branches: [main, v3-dev]
   pull_request:
+    paths-ignore:
+      - "*.md"
+      - "assets/**"
+      - "*.yml"
     branches: [main, v3-dev]
 
 jobs:
