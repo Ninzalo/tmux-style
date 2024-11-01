@@ -21,6 +21,7 @@ check_tmux_option() {
 }
 
 # Test 1: Valid custom theme path
+echo "Test 1: Valid custom theme path"
 CUSTOM_COLORSCHEME_PATH="$CURRENT_FILE/themes/gruvbox-light.conf"
 tmux set-option -gq @${PLUGIN_NAME}-custom-colorscheme-path "$CUSTOM_COLORSCHEME_PATH"
 tmux set-option -gq @${PLUGIN_NAME}-colorscheme "custom_theme"
@@ -29,17 +30,26 @@ bash "$CURRENT_FILE/utils/check_colorscheme.sh" "$PLUGIN_NAME" "$CURRENT_FILE"
 check_tmux_option "@${PLUGIN_NAME}-colorscheme" "$CUSTOM_COLORSCHEME_PATH"
 
 # Test 2: Non-existent custom theme path
+echo ""
+echo ""
+echo "Test 2: Non-existent custom theme path"
 tmux set-option -gq @${PLUGIN_NAME}-custom-colorscheme-path "/invalid/path/to/theme.conf"
 bash "$CURRENT_FILE/utils/check_colorscheme.sh" "$PLUGIN_NAME" "$CURRENT_FILE"
 check_tmux_option "@${PLUGIN_NAME}-colorscheme" "$CURRENT_FILE/themes/gruvbox-dark.conf"
 
 # Test 3: Existing COLORSCHEME theme
+echo ""
+echo ""
+echo "Test 3: Existing COLORSCHEME theme"
 tmux set-option -gq @${PLUGIN_NAME}-custom-colorscheme-path ""
 tmux set-option -gq @${PLUGIN_NAME}-colorscheme "gruvbox-light"
 bash "$CURRENT_FILE/utils/check_colorscheme.sh" "$PLUGIN_NAME" "$CURRENT_FILE"
 check_tmux_option "@${PLUGIN_NAME}-colorscheme" "$CURRENT_FILE/themes/gruvbox-light.conf"
 
 # Test 4: Non-existent COLORSCHEME theme
+echo ""
+echo ""
+echo "Test 4: Non-existent COLORSCHEME theme"
 tmux set-option -gq @${PLUGIN_NAME}-colorscheme "nonexistent_theme"
 bash "$CURRENT_FILE/utils/check_colorscheme.sh" "$PLUGIN_NAME" "$CURRENT_FILE"
 check_tmux_option "@${PLUGIN_NAME}-colorscheme" "$CURRENT_FILE/themes/gruvbox-dark.conf"
