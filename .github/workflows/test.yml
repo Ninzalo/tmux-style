@@ -19,7 +19,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y tmux
 
-      - name: Run tests
+      - name: Run check colorscheme tests
         run: bash tests/test_check_colorscheme.sh
         shell: bash
 
