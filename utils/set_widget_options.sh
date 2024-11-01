@@ -10,6 +10,18 @@ WIDGET_NAME=$2
 PARTS_AMOUNT=$3
 ORIGINAL_WIDGET=$4
 
+if [ "$PARTS_AMOUNT" -gt 20 ]; then
+  echo "Error: PARTS_AMOUNT ($PARTS_AMOUNT) for \
+    widget $WIDGET_NAME exceeds 20"
+  exit 1
+fi
+
+if [ "$PARTS_AMOUNT" -lt 1 ]; then
+  echo "Error: PARTS_AMOUNT ($PARTS_AMOUNT) for \
+    widget $WIDGET_NAME is less than 1"
+  exit 1
+fi
+
 echo "Setting widget options for: PLUGIN_NAME=$PLUGIN_NAME, \
   WIDGET_NAME=$WIDGET_NAME, PARTS_AMOUNT=$PARTS_AMOUNT"
 
