@@ -31,6 +31,7 @@ build_expected_format() {
 }
 
 # Test 1: Default case with 3 parts
+echo "Test 1: Default case with 3 parts"
 WIDGET_NAME="widget1"
 PARTS_AMOUNT=3
 ORIGINAL_WIDGET="@${PLUGIN_NAME}-${WIDGET_NAME}-${PARTS_AMOUNT}-widget"
@@ -56,6 +57,9 @@ else
 fi
 
 # Test 2: Edge case with 1 part
+echo ""
+echo ""
+echo "Test 2: Edge case with 1 part"
 PARTS_AMOUNT=1
 WIDGET_NAME="widget_min"
 ORIGINAL_WIDGET="@${PLUGIN_NAME}-${WIDGET_NAME}-${PARTS_AMOUNT}-widget"
@@ -80,6 +84,9 @@ else
 fi
 
 # Test 3: Edge case with 20 parts
+echo ""
+echo ""
+echo "Test 3: Edge case with 20 parts"
 PARTS_AMOUNT=20
 WIDGET_NAME="widget_max"
 ORIGINAL_WIDGET="@${PLUGIN_NAME}-${WIDGET_NAME}-${PARTS_AMOUNT}-widget"
@@ -104,6 +111,9 @@ else
 fi
 
 # Test 4: Edge case with 0 parts
+echo ""
+echo ""
+echo "Test 4: Edge case with 0 parts (Failure Expected)"
 PARTS_AMOUNT=0
 WIDGET_NAME="widget_zero"
 ORIGINAL_WIDGET="@${PLUGIN_NAME}-${WIDGET_NAME}-${PARTS_AMOUNT}-widget"
@@ -118,6 +128,9 @@ else
 fi
 
 # Test 5: Edge case with 21 parts
+echo ""
+echo ""
+echo "Test 5: Edge case with 21 parts (Failure Expected)"
 PARTS_AMOUNT=21
 WIDGET_NAME="widget_overflow"
 ORIGINAL_WIDGET="@${PLUGIN_NAME}-${WIDGET_NAME}-${PARTS_AMOUNT}-widget"
