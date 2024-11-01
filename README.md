@@ -1,7 +1,16 @@
-<h1 align="center">Tmux-style: Transform Your Tmux Status Line with
-    Themes & Dynamic Widgets
-</h1>
-<p> Tmux-style is the ultimate tmux plugin for deep customization of your
+<div align="center">
+    <h1>
+        Tmux-style: Transform Your Tmux Status Line with Themes
+            & Dynamic Widgets
+    </h1>
+    <div>
+        <img src="https://img.shields.io/github/v/release/Ninzalo/tmux-style">
+        <img src="https://img.shields.io/github/release-date/Ninzalo/tmux-style">
+        <img src="https://img.shields.io/github/last-commit/Ninzalo/tmux-style">
+    </div>
+</div>
+<p>
+    Tmux-style is the ultimate tmux plugin for deep customization of your
     status line. With Tmux-style, easily apply beautiful, ready-made themes,
     or craft your own custom colorschemes for a look that’s all your own.
     Build powerful widgets that showcase dynamic data at a glance, and
