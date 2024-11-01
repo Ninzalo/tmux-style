@@ -20,8 +20,8 @@ check_tmux_option() {
     fi
 }
 
-# Test: Valid PARAM_STRING with multiple widgets
-echo "Test: Valid PARAM_STRING with multiple widgets"
+# Test 1: Valid PARAM_STRING with multiple widgets
+echo "Test 1: Valid PARAM_STRING with multiple widgets"
 PARAM_STRING="#{E:@my_plugin-widget1-widget}#{E:@my_plugin-widget2-2-widget}"
 tmux set-option -gq @test-param "$PARAM_STRING"
 
@@ -68,10 +68,10 @@ tmux set-option -gq @${PLUGIN_NAME}-widget2-p2-value "2"
 check_tmux_option "@${PLUGIN_NAME}-widget2-p2-value" "2"
 
 
-# Test: Invalid PARAM_STRING (no widgets)
+# Test 2: Invalid PARAM_STRING (no widgets)
 echo ""
 echo ""
-echo "Testing: Invalid PARAM_STRING (no widgets)"
+echo "Test 2: Invalid PARAM_STRING (no widgets)"
 PARAM_STRING="#{E:@my_plugin-widget3-21-widget}#{E:@my_plugin-widget4-0-widget}"
 tmux set-option -gq @test-param "$PARAM_STRING"
 bash "$CURRENT_PATH/utils/parse_widgets.sh" "$PLUGIN_NAME" "$CURRENT_PATH" "@test-param"
@@ -84,10 +84,10 @@ check_tmux_option "@${PLUGIN_NAME}-widget4-p1-value" ""
 
 echo "PASS: No widgets found in PARAM_STRING as expected."
 
-# Test: Invalid PARAM_STRING (no widgets)
+# Test 3: Invalid PARAM_STRING (no widgets)
 echo ""
 echo ""
-echo "Testing: Invalid PARAM_STRING (no widgets)"
+echo "Test 3: Invalid PARAM_STRING (no widgets)"
 tmux set-option -gq @test-param ""
 bash "$CURRENT_PATH/utils/parse_widgets.sh" "$PLUGIN_NAME" "$CURRENT_PATH" "@test-param"
 echo "PASS: No widgets found in PARAM_STRING as expected."
