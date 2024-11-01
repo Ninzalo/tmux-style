@@ -38,3 +38,19 @@ jobs:
       - name: Run parse widgets tests
         run: bash tests/test_parse_widgets.sh
         shell: bash
+
+  test-set-widget-options:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tmux
+
+      - name: Run widget options tests
+        run: bash tests/test_set_widget_options.sh
+        shell: bash
