@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.8.1](https://github.com/Ninzalo/tmux-style/compare/v3.8.0...v3.8.1) (2024-11-01)
+
+
+### Refactor
+
+* **workflows:** rename release workflow ([f20c148](https://github.com/Ninzalo/tmux-style/commit/f20c148c4bb7494993341c489b6265384a3ff8e6))
+* **workflows:** rename tests workflow ([cdff66e](https://github.com/Ninzalo/tmux-style/commit/cdff66ea97cc9c52873e1c9a45affed1aff842d9))
+
 ## [3.8.0](https://github.com/Ninzalo/tmux-style/compare/v3.7.1...v3.8.0) (2024-11-01)
 
 
