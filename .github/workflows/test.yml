@@ -1,0 +1,24 @@
+name: Tmux-style Plugin Tests
+
+on:
+  push:
+    branches: [main, v3-dev]
+  pull_request:
+    branches: [main, v3-dev]
+
+jobs:
+  test-check-colorscheme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tmux
+
+      - name: Run tests
+        run: bash tests/test_check_colorscheme.sh
+        shell: bash
