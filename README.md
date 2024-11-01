@@ -7,6 +7,7 @@
         <img src="https://img.shields.io/github/v/release/Ninzalo/tmux-style">
         <img src="https://img.shields.io/github/release-date/Ninzalo/tmux-style">
         <img src="https://img.shields.io/github/last-commit/Ninzalo/tmux-style">
+        <img src="https://img.shields.io/github/actions/workflow/status/Ninzalo/tmux-style/test.yml?branch=main&event=push">
     </div>
 </div>
 <p>
