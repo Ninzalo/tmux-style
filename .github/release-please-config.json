@@ -1,0 +1,24 @@
+{
+  "last-release-sha": "0b139a1e71b55a9b1c38853d3ca3c1a9ecea7525",
+  "packages": {
+    ".": {
+      "release-type": "simple",
+      "changelog-path": "CHANGELOG.md",
+      "bump-minor-pre-major": true,
+      "bump-patch-for-minor-pre-major": false,
+      "draft": false,
+      "extra-files": ["README.md"]
+    }
+  },
+  "changelog-sections": [
+    { "type": "feat", "section": "Added" },
+    { "type": "change", "section": "Changed" },
+    { "type": "fix", "section": "Fixed" },
+    { "type": "refactor", "section": "Refactor" },
+    { "type": "deprecate", "section": "Deprecated" },
+    { "type": "remove", "section": "Removed" },
+    { "type": "revert", "section": "Reverts" },
+    { "type": "docs", "section": "Documentation" }
+  ],
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"
+}
