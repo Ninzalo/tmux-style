@@ -22,3 +22,19 @@ jobs:
       - name: Run tests
         run: bash tests/test_check_colorscheme.sh
         shell: bash
+
+  test-parse-widgets:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tmux
+
+      - name: Run parse widgets tests
+        run: bash tests/test_parse_widgets.sh
+        shell: bash
