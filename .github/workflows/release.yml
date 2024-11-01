@@ -1,13 +1,10 @@
 name: Release
 
 on:
-  push:
-    branches:
-      - main
   workflow_run:
-    workflows: ["Tests"]
-    types:
-      - completed
+    workflows: [Tests]
+    types: [completed]
+    branches: [main]
 
 permissions:
   contents: write
