@@ -82,3 +82,19 @@ jobs:
       - name: Run e2e custom widgets tests
         run: bash tests/test_e2e1_custom_widgets.sh
         shell: bash
+
+  test-e2e-default-colorscheme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tmux
+
+      - name: Run e2e default colorscheme test
+        run: bash tests/test_e2e2_default_colorscheme.sh
+        shell: bash
