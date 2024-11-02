@@ -16,22 +16,6 @@ cleanup() {
 }
 trap cleanup EXIT
 
-command -v tmux >/dev/null 2>&1 || { echo "tmux is not installed. Aborting." >&2; exit 1; }
-
-touch "$TMUX_CONF"
-touch "$EXPECTED_OUTPUT"
-touch "$LOG_FILE"
-
-# Create a minimal tmux.conf to load the plugin
-cat << EOF > "$TMUX_CONF"
-set -g status-left ""
-set -g status-right ""
-
-set -ag status-left "#{E:@tmst-custom1-1-widget}"
-set -ag status-left "#{E:@tmst-custom2-widget}"
-run-shell "$PLUGIN_DIR/tmux-style.tmux"
-EOF
-
 generate_expected_output() {
   local file="$1"
   local param_count="$2"
@@ -56,16 +40,6 @@ generate_expected_output() {
   fi
 }
 
-# Generate the expected output
-generate_expected_output "$EXPECTED_OUTPUT" 1
-generate_expected_output "$EXPECTED_OUTPUT" 4 false
-
-# Start a new tmux session and load the plugin with test configurations
-tmux new-session -d -s e2e_test -f "$TMUX_CONF" >/dev/null
-
-# Reload tmux environment
-tmux source-file "$TMUX_CONF"
-
 log_tmux_messages() {
   local prefix="$1"
   local log_file="$2"
@@ -82,6 +56,34 @@ log_tmux_messages() {
     echo "---" >> "$log_file"
   fi
 }
+
+# Create temporary files
+touch "$TMUX_CONF"
+touch "$EXPECTED_OUTPUT"
+touch "$LOG_FILE"
+
+# Create a minimal tmux.conf to load the plugin
+cat << EOF > "$TMUX_CONF"
+set -g status-left ""
+set -g status-right ""
+
+set -ag status-left "#{E:@tmst-custom1-1-widget}"
+set -ag status-left "#{E:@tmst-custom2-widget}"
+run-shell "$PLUGIN_DIR/tmux-style.tmux"
+EOF
+
+# Check if tmux is installed
+command -v tmux >/dev/null 2>&1 || { echo "tmux is not installed. Aborting." >&2; exit 1; }
+
+# Generate the expected output
+generate_expected_output "$EXPECTED_OUTPUT" 1
+generate_expected_output "$EXPECTED_OUTPUT" 4 false
+
+# Start a new tmux session and load the plugin with test configurations
+tmux new-session -d -s e2e_test -f "$TMUX_CONF" >/dev/null
+
+# Reload tmux environment
+tmux source-file "$TMUX_CONF"
 
 # Create logs
 log_tmux_messages "custom1" "$LOG_FILE" 1
