@@ -4,7 +4,7 @@
 set -e  # Exit on error
 
 # Initialize variables for paths and configurations
-PLUGIN_DIR="$(dirname "$(dirname "$0")")"
+PLUGIN_DIR="$(realpath "$(dirname "$0")/..")"
 TMUX_CONF="$HOME/.tmux.conf"
 EXPECTED_OUTPUT="$HOME/expected_output.log"
 LOG_FILE="$HOME/tmux_plugin_test.log"
@@ -66,6 +66,8 @@ touch "$LOG_FILE"
 cat << EOF > "$TMUX_CONF"
 set -g status-left ""
 set -g status-right ""
+set -g window-status-current-format ""
+set -g window-status-format ""
 
 set -ag status-left "#{E:@tmst-custom1-1-widget}"
 set -ag status-left "#{E:@tmst-custom2-widget}"
@@ -99,18 +101,10 @@ log_tmux_messages "custom4" "$LOG_FILE" 0 false
 if diff -q "$LOG_FILE" "$EXPECTED_OUTPUT" >/dev/null; then
   echo "Expected:"
   cat "$EXPECTED_OUTPUT"
-
   echo "Actual:"
   cat "$LOG_FILE"
-
   echo "[PASS] End-to-end test passed!"
 else
-  echo "Expected:"
-  cat "$EXPECTED_OUTPUT"
-
-  echo "Actual:"
-  cat "$LOG_FILE"
-
   echo "[FAIL] End-to-end test failed. See differences below:"
   diff "$LOG_FILE" "$EXPECTED_OUTPUT"
   exit 1
