@@ -67,9 +67,9 @@ tmux new-session -d -s e2e_test -f "$TMUX_CONF" >/dev/null
 tmux source-file "$TMUX_CONF"
 
 log_tmux_messages() {
-  local prefix="$1"      # Prefix for tmux variables, e.g., "@tmst-custom1"
-  local log_file="$2"    # Path to the log file
-  local param_count="$3" # Number of params to log for each prefix
+  local prefix="$1"
+  local log_file="$2"
+  local param_count="$3"
   local add_separator="${4:-true}"
 
   for i in $( seq 1 $(($param_count + 1)) ); do
@@ -78,7 +78,6 @@ log_tmux_messages() {
     tmux display-message -p "#{E:@tmst-$prefix-p${i}-bg}" >> "$log_file"
   done
 
-  # Add an empty line if add_newline is true
   if [[ "$add_separator" == true ]]; then
     echo "---" >> "$log_file"
   fi
