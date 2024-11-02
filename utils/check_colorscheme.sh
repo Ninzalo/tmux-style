@@ -6,8 +6,8 @@ CURRENT_FILE=$2
 COLORSCHEME=$(tmux show-option -gqv @${PLUGIN_NAME}-colorscheme)
 CUSTOM_COLORSCHEME_PATH=$(tmux show-option -gqv @${PLUGIN_NAME}-custom-colorscheme-path)
 
-if [[ -n "$CUSTOM_COLORSCHEME_PATH" ]]; then
-    if [[ -f "$CUSTOM_COLORSCHEME_PATH" ]]; then
+if [ -n "$CUSTOM_COLORSCHEME_PATH" ]; then
+    if [ -f "$CUSTOM_COLORSCHEME_PATH" ]; then
         tmux set-option -g @${PLUGIN_NAME}-colorscheme "$CUSTOM_COLORSCHEME_PATH"
         exit 0
     else
@@ -15,7 +15,7 @@ if [[ -n "$CUSTOM_COLORSCHEME_PATH" ]]; then
     fi
 fi
 
-if [[ -f "${CURRENT_FILE}/themes/${COLORSCHEME}.conf" ]]; then
+if [ -f "${CURRENT_FILE}/themes/${COLORSCHEME}.conf" ]; then
     tmux set-option -g @${PLUGIN_NAME}-colorscheme "$CURRENT_FILE/themes/${COLORSCHEME}.conf"
     exit 0
 else
