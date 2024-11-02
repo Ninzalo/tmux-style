@@ -12,7 +12,7 @@ check_tmux_option() {
     local expected_value=$2
     local actual_value
     actual_value=$(tmux show-option -gqv $option)
-    if [[ "$actual_value" == "$expected_value" ]]; then
+    if [ "$actual_value" == "$expected_value" ]; then
         echo "PASS: $option is set correctly to $expected_value"
     else
         echo "FAIL: $option is $actual_value, expected $expected_value"

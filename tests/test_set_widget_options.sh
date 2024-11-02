@@ -12,7 +12,7 @@ check_tmux_option() {
     local expected_value=$2
     local actual_value
     actual_value=$(tmux show-option -gqv "$option")
-    if [[ "$actual_value" == "$expected_value" ]]; then
+    if [ "$actual_value" == "$expected_value" ]; then
         echo "PASS: $option is set correctly to $expected_value"
     else
         echo "FAIL: $option is $actual_value, expected $expected_value"
@@ -49,7 +49,7 @@ done
 # Check the widget format for 3 parts
 EXPECTED_FORMAT=$(build_expected_format "$PARTS_AMOUNT")
 actual_format=$(tmux show-option -gqv "$ORIGINAL_WIDGET")
-if [[ "$actual_format" == "$EXPECTED_FORMAT" ]]; then
+if [ "$actual_format" == "$EXPECTED_FORMAT" ]; then
     echo "PASS: Widget format for $PARTS_AMOUNT parts is set correctly to $EXPECTED_FORMAT"
 else
     echo "FAIL: $ORIGINAL_WIDGET is $actual_format, expected $EXPECTED_FORMAT"
@@ -76,7 +76,7 @@ done
 # Check the widget format for 1 part
 EXPECTED_FORMAT=$(build_expected_format "$PARTS_AMOUNT")
 actual_format=$(tmux show-option -gqv "$ORIGINAL_WIDGET")
-if [[ "$actual_format" == "$EXPECTED_FORMAT" ]]; then
+if [ "$actual_format" == "$EXPECTED_FORMAT" ]; then
     echo "PASS: Widget format for $PARTS_AMOUNT part is set correctly to $EXPECTED_FORMAT"
 else
     echo "FAIL: $ORIGINAL_WIDGET is $actual_format, expected $EXPECTED_FORMAT"
@@ -103,7 +103,7 @@ done
 # Check the widget format for 20 parts
 EXPECTED_FORMAT=$(build_expected_format "$PARTS_AMOUNT")
 actual_format=$(tmux show-option -gqv "$ORIGINAL_WIDGET")
-if [[ "$actual_format" == "$EXPECTED_FORMAT" ]]; then
+if [ "$actual_format" == "$EXPECTED_FORMAT" ]; then
     echo "PASS: Widget format for $PARTS_AMOUNT parts is set correctly to $EXPECTED_FORMAT"
 else
     echo "FAIL: $ORIGINAL_WIDGET is $actual_format, expected $EXPECTED_FORMAT"
@@ -120,7 +120,7 @@ ORIGINAL_WIDGET="@${PLUGIN_NAME}-${WIDGET_NAME}-${PARTS_AMOUNT}-widget"
 
 # Run the script and expect it to fail
 bash "$CURRENT_FILE/utils/set_widget_options.sh" "$PLUGIN_NAME" "$WIDGET_NAME" "$PARTS_AMOUNT" "$ORIGINAL_WIDGET"
-if [[ $? -ne 0 ]]; then
+if [ $? -ne 0 ]; then
     echo "PASS: Test for PARTS_AMOUNT=0 failed as expected"
 else
     echo "FAIL: Test for PARTS_AMOUNT=0 should have failed"
@@ -137,7 +137,7 @@ ORIGINAL_WIDGET="@${PLUGIN_NAME}-${WIDGET_NAME}-${PARTS_AMOUNT}-widget"
 
 # Run the script and expect it to fail
 bash "$CURRENT_FILE/utils/set_widget_options.sh" "$PLUGIN_NAME" "$WIDGET_NAME" "$PARTS_AMOUNT" "$ORIGINAL_WIDGET"
-if [[ $? -ne 0 ]]; then
+if [ $? -ne 0 ]; then
     echo "PASS: Test for PARTS_AMOUNT=21 failed as expected"
 else
     echo "FAIL: Test for PARTS_AMOUNT=21 should have failed"

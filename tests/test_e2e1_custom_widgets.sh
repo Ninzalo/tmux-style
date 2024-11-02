@@ -22,20 +22,20 @@ generate_expected_output() {
   local add_separator="${3:-true}"
 
   for i in $( seq 1 $(($param_count + 1)) ); do
-    if [[ "$i" -ne $(($param_count + 1)) ]]; then
+    if [ "$i" -ne $(($param_count + 1)) ]; then
       echo "$i" >> "$file"
       echo "#ffffff" >> "$file"
       echo "#000000" >> "$file"
     fi
 
-    if [[ "$i" -eq $(($param_count + 1)) ]]; then
+    if [ "$i" -eq $(($param_count + 1)) ]; then
       echo "" >> "$file"
       echo "" >> "$file"
       echo "" >> "$file"
     fi
   done
 
-  if [[ "$add_separator" == true ]]; then
+  if [ "$add_separator" == true ]; then
     echo "---" >> "$file"
   fi
 }
@@ -52,7 +52,7 @@ log_tmux_messages() {
     tmux display-message -p "#{E:@tmst-$prefix-p${i}-bg}" >> "$log_file"
   done
 
-  if [[ "$add_separator" == true ]]; then
+  if [ "$add_separator" == true ]; then
     echo "---" >> "$log_file"
   fi
 }
