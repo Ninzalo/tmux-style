@@ -89,9 +89,21 @@ log_tmux_messages "custom2" "$LOG_FILE" 4 false
 
 # Verify if the output matches expected values
 if diff -q "$LOG_FILE" "$EXPECTED_OUTPUT" >/dev/null; then
-    echo "End-to-end test passed!"
+  echo "Expected:"
+  cat "$EXPECTED_OUTPUT"
+
+  echo "Actual:"
+  cat "$LOG_FILE"
+
+  echo "[PASS] End-to-end test passed!"
 else
-    echo "End-to-end test failed. See differences below:"
-    diff "$LOG_FILE" "$EXPECTED_OUTPUT"
-    exit 1
+  echo "Expected:"
+  cat "$EXPECTED_OUTPUT"
+
+  echo "Actual:"
+  cat "$LOG_FILE"
+
+  echo "[FAIL] End-to-end test failed. See differences below:"
+  diff "$LOG_FILE" "$EXPECTED_OUTPUT"
+  exit 1
 fi
