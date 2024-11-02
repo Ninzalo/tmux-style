@@ -69,6 +69,8 @@ set -g status-right ""
 
 set -ag status-left "#{E:@tmst-custom1-1-widget}"
 set -ag status-left "#{E:@tmst-custom2-widget}"
+set -ag status-left "#{E:@tmst-custom3-0-widget}"
+set -ag status-left "#{E:@tmst-custom4-21-widget}"
 run-shell "$PLUGIN_DIR/tmux-style.tmux"
 EOF
 
@@ -77,7 +79,9 @@ command -v tmux >/dev/null 2>&1 || { echo "tmux is not installed. Aborting." >&2
 
 # Generate the expected output
 generate_expected_output "$EXPECTED_OUTPUT" 1
-generate_expected_output "$EXPECTED_OUTPUT" 4 false
+generate_expected_output "$EXPECTED_OUTPUT" 4
+generate_expected_output "$EXPECTED_OUTPUT" 0
+generate_expected_output "$EXPECTED_OUTPUT" 0 false
 
 # Start a new tmux session and load the plugin with test configurations
 tmux new-session -d -s e2e_test -f "$TMUX_CONF" >/dev/null
@@ -87,7 +91,9 @@ tmux source-file "$TMUX_CONF"
 
 # Create logs
 log_tmux_messages "custom1" "$LOG_FILE" 1
-log_tmux_messages "custom2" "$LOG_FILE" 4 false
+log_tmux_messages "custom2" "$LOG_FILE" 4
+log_tmux_messages "custom3" "$LOG_FILE" 0
+log_tmux_messages "custom4" "$LOG_FILE" 0 false
 
 # Verify if the output matches expected values
 if diff -q "$LOG_FILE" "$EXPECTED_OUTPUT" >/dev/null; then
