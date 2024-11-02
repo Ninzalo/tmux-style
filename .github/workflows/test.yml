@@ -146,3 +146,19 @@ jobs:
       - name: Run e2e custom colorscheme test
         run: bash tests/test_e2e5_custom_colorscheme.sh
         shell: bash
+
+  test-e2e-invalid-custom-colorscheme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tmux
+
+      - name: Run e2e invalid custom colorscheme test
+        run: bash tests/test_e2e6_invalid_custom_colorscheme.sh
+        shell: bash
