@@ -67,7 +67,7 @@ jobs:
         run: bash tests/test_set_widget_options.sh
         shell: bash
 
-  test-e2e1:
+  test-e2e-custom-widgets:
     runs-on: ubuntu-latest
 
     steps:
@@ -79,6 +79,6 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y tmux
 
-      - name: Run e2e1 tests
+      - name: Run e2e custom widgets tests
         run: bash tests/test_e2e1_custom_widgets.sh
         shell: bash
