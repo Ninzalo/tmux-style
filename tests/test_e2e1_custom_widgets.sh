@@ -4,14 +4,14 @@
 set -e  # Exit on error
 
 # Initialize variables for paths and configurations
-PLUGIN_DIR="$(realpath "$(dirname "$0")/..")"
+PLUGIN_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 TMUX_CONF="$HOME/.tmux.conf"
 EXPECTED_OUTPUT="$HOME/expected_output.log"
 LOG_FILE="$HOME/tmux_plugin_test.log"
 
 # Cleanup function to ensure tmux sessions are closed
 cleanup() {
-    tmux kill-session -t e2e_test || true
+    tmux kill-session -t e2e1_test || true
     rm -f "$TMUX_CONF" "$EXPECTED_OUTPUT" "$LOG_FILE"
 }
 trap cleanup EXIT
@@ -73,7 +73,7 @@ set -ag status-left "#{E:@tmst-custom1-1-widget}"
 set -ag status-left "#{E:@tmst-custom2-widget}"
 set -ag status-left "#{E:@tmst-custom3-0-widget}"
 set -ag status-left "#{E:@tmst-custom4-21-widget}"
-run-shell "$PLUGIN_DIR/tmux-style.tmux"
+source -F "$PLUGIN_DIR/tmux-style.conf"
 EOF
 
 # Check if tmux is installed
@@ -86,10 +86,10 @@ generate_expected_output "$EXPECTED_OUTPUT" 0
 generate_expected_output "$EXPECTED_OUTPUT" 0 false
 
 # Start a new tmux session and load the plugin with test configurations
-tmux new-session -d -s e2e_test -f "$TMUX_CONF" >/dev/null
+tmux -f /dev/null new-session -d -s e2e1_test
 
 # Reload tmux environment
-tmux source-file "$TMUX_CONF"
+tmux source -F "$TMUX_CONF"
 
 # Create logs
 log_tmux_messages "custom1" "$LOG_FILE" 1
