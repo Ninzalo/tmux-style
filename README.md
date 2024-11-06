@@ -152,6 +152,8 @@ set -g @tmst-colorscheme "gruvbox-dark"
     <img src='./assets/colorschemes/catppuccin-latte.png' height='16'/>
     <li>solarized-dark</li>
     <img src='./assets/colorschemes/solarized-dark.png' height='16'/>
+    <li>solarized-light</li>
+    <img src='./assets/colorschemes/solarized-light.png' height='16'/>
 </ul>
 
 > [!NOTE]
