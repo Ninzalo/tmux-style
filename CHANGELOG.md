@@ -1,5 +1,54 @@
 # Changelog
 
+## [3.10.0](https://github.com/Ninzalo/tmux-style/compare/v3.8.1...v3.10.0) (2024-11-06)
+
+
+### chore
+
+* release 3.10.0 ([ab5c7a7](https://github.com/Ninzalo/tmux-style/commit/ab5c7a7d30d25d8d4cb048899a822c14c904e97c))
+
+
+### Added
+
+* **assets/colorschemes:** add solarized-dark colorscheme ([e674c45](https://github.com/Ninzalo/tmux-style/commit/e674c45528fa54a6300bd4a24afd0016ca6f9712))
+* **assets/colorschemes:** add solarized-light colorscheme ([ecf6061](https://github.com/Ninzalo/tmux-style/commit/ecf60610c88383dd7014e67793499feff44b9bd8))
+* **tests/e2e1:** add more edge cases ([4fc6ea1](https://github.com/Ninzalo/tmux-style/commit/4fc6ea1e7782e130ad2436736f102d6475a133de))
+* **tests/e2e:** add custom colorscheme test ([28aa799](https://github.com/Ninzalo/tmux-style/commit/28aa799058d315675c903cbf5f9a67dc7ca1b512))
+* **tests/e2e:** add default colorscheme test ([54ebd99](https://github.com/Ninzalo/tmux-style/commit/54ebd998edffcabfbaa1aeb83544ed7e4297fdaf))
+* **tests/e2e:** add e2e custom widgets test ([427aa61](https://github.com/Ninzalo/tmux-style/commit/427aa611fbfbde0335a7648bcd7c278d86fb1a09))
+* **tests/e2e:** add invalid colorscheme test ([964ed8d](https://github.com/Ninzalo/tmux-style/commit/964ed8d4f827dce122f58d14b301c4edfdfd8853))
+* **tests/e2e:** add invalid custom colorscheme test ([b443b1c](https://github.com/Ninzalo/tmux-style/commit/b443b1c13fbc8c7c09b48581eb03ba21daf8843d))
+* **tests/e2e:** add non-default colorscheme test ([dedea7a](https://github.com/Ninzalo/tmux-style/commit/dedea7a0a5811eaacfc079da73a6d66e6a3f8f22))
+* **themes/solarized:** add solarized dark colorscheme ([03732fc](https://github.com/Ninzalo/tmux-style/commit/03732fcbb4c49104bd41c50358f16c010419f9c1)), closes [#16](https://github.com/Ninzalo/tmux-style/issues/16)
+* **themes/solarized:** add solarized light colorscheme ([08942b6](https://github.com/Ninzalo/tmux-style/commit/08942b6f7215ec8549014289370c20f4e7aee9e5)), closes [#17](https://github.com/Ninzalo/tmux-style/issues/17)
+* **workflows/test:** add e2e custom colorscheme test job ([8e298b3](https://github.com/Ninzalo/tmux-style/commit/8e298b346aac0d48f44952b2ea6afab8c9060689))
+* **workflows/test:** add e2e default colorscheme test job ([be3c428](https://github.com/Ninzalo/tmux-style/commit/be3c428028178dc5e2756259018ac95950233e96))
+* **workflows/test:** add e2e invalid colorscheme test job ([001c146](https://github.com/Ninzalo/tmux-style/commit/001c146955aaa96966483e3d7c7857ac517995a0))
+* **workflows/test:** add e2e invalid custom colorscheme test job ([c67b13a](https://github.com/Ninzalo/tmux-style/commit/c67b13ae4dc8d42392fb8724df69b740fd14ff9d))
+* **workflows/test:** add e2e non-default colorscheme test job ([1018162](https://github.com/Ninzalo/tmux-style/commit/10181628d2c3aa27fa4d7bafe85775e0bb916a57))
+* **workflows:** add e2e1 test ([5dc5e2b](https://github.com/Ninzalo/tmux-style/commit/5dc5e2b607af1cf85f45214b73d422de9a0e39fc))
+
+
+### Fixed
+
+* **tests/e2e1:** fix configuration file sourcing ([3f9e271](https://github.com/Ninzalo/tmux-style/commit/3f9e27177cb6a521a24edaa1958a04784bd6358e))
+* **tests:** replace [[ with [ ([2cce142](https://github.com/Ninzalo/tmux-style/commit/2cce142e48c4eaaffed1e220f9480dc7ac855277))
+* **utils/check_colorscheme:** replace [[ with [ ([68adc06](https://github.com/Ninzalo/tmux-style/commit/68adc06c23c21389befb75f9e390b287b35cec91))
+
+
+### Refactor
+
+* **tests/e2e1:** minor refactor ([8ade416](https://github.com/Ninzalo/tmux-style/commit/8ade416736218b2f67f5025eb7ca0a33269a7d87))
+* **tests/e2e1:** minor refactor ([e4a7031](https://github.com/Ninzalo/tmux-style/commit/e4a703115442e0c5fed2bff87c7c94fe69ba754e))
+* **workflows/test:** change job name to more specific ([ad54c45](https://github.com/Ninzalo/tmux-style/commit/ad54c45f98e91f11f633dae4ca3b12f359c80a96))
+
+
+### Documentation
+
+* **readme/colorschemes:** add solarized-dark colorscheme preview ([b37da0b](https://github.com/Ninzalo/tmux-style/commit/b37da0b06c1616acec7f2de7ebc81e3acb232e47))
+* **readme/colorschemes:** add solarized-light colorscheme preview ([930290a](https://github.com/Ninzalo/tmux-style/commit/930290ac294114295a52a1fceddd9d250ece2e55)), closes [#7](https://github.com/Ninzalo/tmux-style/issues/7)
+* **readme/credits:** add credits to Ethan Schoonover ([2dcda3f](https://github.com/Ninzalo/tmux-style/commit/2dcda3fe4ae1eee482294b606fcf64e228378e70))
+
 ## [3.8.1](https://github.com/Ninzalo/tmux-style/compare/v3.8.0...v3.8.1) (2024-11-01)
 
 
