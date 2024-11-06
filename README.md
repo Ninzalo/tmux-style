@@ -283,4 +283,11 @@ set -ag status-left "#{E:@tmst-custom2-2-widget}" # Create default values for 'c
             catppuccin
         </a> colorscheme
     </li>
+    <li>
+        <a href='https://github.com/altercation'>
+            @altercation
+        </a> - <a href='https://github.com/altercation/solarized'>
+            solarized
+        </a> colorscheme
+    </li>
 </ul>
