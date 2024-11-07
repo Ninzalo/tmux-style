@@ -140,6 +140,8 @@ set -g @tmst-colorscheme "gruvbox-dark"
 <ul>
     <li>gruvbox-dark</li>
     <img src='./assets/colorschemes/gruvbox-dark.png' height='16'/>
+    <li>gruvbox-material</li>
+    <img src='./assets/colorschemes/gruvbox-material.png' height='16'/>
     <li>gruvbox-light</li>
     <img src='./assets/colorschemes/gruvbox-light.png' height='16'/>
     <li>catppuccin-mocha</li>
@@ -274,6 +276,13 @@ set -ag status-left "#{E:@tmst-custom2-2-widget}" # Create default values for 'c
             @morhetz
         </a> - <a href='https://github.com/morhetz/gruvbox'>
             gruvbox
+        </a> colorscheme
+    </li>
+    <li>
+        <a href='https://github.com/Mofiqul'>
+            @Mofiqul
+        </a> - <a href='https://github.com/Mofiqul/vscode.nvim/tree/main'>
+            gruvbox-material
         </a> colorscheme
     </li>
     <li>
