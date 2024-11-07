@@ -1,5 +1,27 @@
 # Changelog
 
+## [3.11.0](https://github.com/Ninzalo/tmux-style/compare/v3.10.0...v3.11.0) (2024-11-07)
+
+
+### Added
+
+* **release-please:** add 'Others' section ([df248a1](https://github.com/Ninzalo/tmux-style/commit/df248a1d8db371bf9d2b7cb9490b1d96611b1b1e))
+* **themes/gruvbox:** add gruvbox material colorscheme ([8fb60b9](https://github.com/Ninzalo/tmux-style/commit/8fb60b92dd11ffe24e577b8680e5ee98bcaf1383))
+* **workflows/release:** add paths-ignore ([8da4ccd](https://github.com/Ninzalo/tmux-style/commit/8da4ccd354c5d95379c38d011b06bd48008a7f32))
+* **workflows/test:** add paths-ignore ([5739579](https://github.com/Ninzalo/tmux-style/commit/5739579a196f60967f503cf99805340321f99291))
+
+
+### Documentation
+
+* **readme/colorschemes:** add gruvbox-material colorscheme preview ([1ba2f3c](https://github.com/Ninzalo/tmux-style/commit/1ba2f3c9bfd1250939d53fef5ad4e472ffa79bc9))
+* **readme/credits:** add credits to Mofiqul ([44d3640](https://github.com/Ninzalo/tmux-style/commit/44d3640f95abbff2ecfb8f0e60ab2058d2cf0854))
+
+
+### Others
+
+* **assets/colorschemes:** add gruvbox-material colorscheme ([95b4d1f](https://github.com/Ninzalo/tmux-style/commit/95b4d1f5d5d0bb2140cf050b1d50232483516a9a))
+* **main:** add gruvbox-material colorscheme ([61eba48](https://github.com/Ninzalo/tmux-style/commit/61eba4898e14c5a01c6ca0288684fe2528647370))
+
 ## [3.10.0](https://github.com/Ninzalo/tmux-style/compare/v3.8.1...v3.10.0) (2024-11-06)
 
 
