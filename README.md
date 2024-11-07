@@ -279,6 +279,13 @@ set -ag status-left "#{E:@tmst-custom2-2-widget}" # Create default values for 'c
         </a> colorscheme
     </li>
     <li>
+        <a href='https://github.com/sainnhe'>
+            @sainnhe
+        </a> - <a href='https://github.com/sainnhe/gruvbox-material'>
+            gruvbox-material
+        </a> colorscheme
+    </li>
+    <li>
         <a href='https://github.com/catppuccin'>
             @catppuccin
         </a> - <a href='https://github.com/catppuccin/tmux'>
