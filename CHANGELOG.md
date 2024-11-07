@@ -1,5 +1,27 @@
 # Changelog
 
+## [3.12.0](https://github.com/Ninzalo/tmux-style/compare/v3.11.0...v3.12.0) (2024-11-07)
+
+
+### Added
+
+* **themes/vscode:** add vscode dark colorscheme ([4065bbb](https://github.com/Ninzalo/tmux-style/commit/4065bbb649510f829ee41aedace07a2f8c1f124d))
+* **themes/vscode:** add vscode light colorscheme ([4065bbb](https://github.com/Ninzalo/tmux-style/commit/4065bbb649510f829ee41aedace07a2f8c1f124d))
+
+
+### Documentation
+
+* **readme/colorschemes:** add vscode-dark colorscheme preview ([3c016b7](https://github.com/Ninzalo/tmux-style/commit/3c016b780f2fb274c878a49073623898e184b6b5))
+* **readme/colorschemes:** add vscode-light colorscheme preview ([2d350c8](https://github.com/Ninzalo/tmux-style/commit/2d350c8cea00cbd8ba979590818ca41b6932cad8))
+* **readme/credits:** add credits to Mofiqul ([298c64b](https://github.com/Ninzalo/tmux-style/commit/298c64bc2f052ba228c3ec1c1d6c56e95c4d1e9b))
+
+
+### Others
+
+* **assets/colorschemes:** add vscode-dark colorscheme ([4065bbb](https://github.com/Ninzalo/tmux-style/commit/4065bbb649510f829ee41aedace07a2f8c1f124d))
+* **assets/colorschemes:** add vscode-light colorscheme ([4065bbb](https://github.com/Ninzalo/tmux-style/commit/4065bbb649510f829ee41aedace07a2f8c1f124d))
+* **main:** add vscode colorscheme ([4065bbb](https://github.com/Ninzalo/tmux-style/commit/4065bbb649510f829ee41aedace07a2f8c1f124d))
+
 ## [3.11.0](https://github.com/Ninzalo/tmux-style/compare/v3.10.0...v3.11.0) (2024-11-07)
 
 
