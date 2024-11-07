@@ -294,4 +294,11 @@ set -ag status-left "#{E:@tmst-custom2-2-widget}" # Create default values for 'c
             solarized
         </a> colorscheme
     </li>
+    <li>
+        <a href='https://github.com/Mofiqul'>
+            @Mofiqul
+        </a> - <a href='https://github.com/Mofiqul/vscode.nvim/tree/main'>
+            vscode
+        </a> colorscheme
+    </li>
 </ul>
