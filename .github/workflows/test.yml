@@ -3,8 +3,14 @@ name: Tests
 on:
   push:
     branches: [main, v3-dev]
+    paths-ignore:
+      - "*.md"
+      - "assets/**"
   pull_request:
     branches: [main, v3-dev]
+    paths-ignore:
+      - "*.md"
+      - "assets/**"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
