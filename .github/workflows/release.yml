@@ -5,6 +5,10 @@ on:
     workflows: [Tests]
     types: [completed]
     branches: [main]
+    paths-ignore:
+      - "*.md"
+      - "assets/**"
+      - "*.yml"
 
 permissions:
   contents: write
