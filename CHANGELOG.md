@@ -1,5 +1,28 @@
 # Changelog
 
+## [3.11.0](https://github.com/Ninzalo/tmux-style/compare/v3.10.0...v3.11.0) (2024-11-07)
+
+
+### Added
+
+* **release-please:** add 'Others' section ([1b70f61](https://github.com/Ninzalo/tmux-style/commit/1b70f61fb2239b248e96f7a656e4414d1d58b498))
+* **themes/gruvbox:** add gruvbox material colorscheme ([8fb60b9](https://github.com/Ninzalo/tmux-style/commit/8fb60b92dd11ffe24e577b8680e5ee98bcaf1383))
+* **workflows/release:** add paths-ignore ([8da4ccd](https://github.com/Ninzalo/tmux-style/commit/8da4ccd354c5d95379c38d011b06bd48008a7f32))
+* **workflows/test:** add paths-ignore ([5739579](https://github.com/Ninzalo/tmux-style/commit/5739579a196f60967f503cf99805340321f99291))
+
+
+### Documentation
+
+* **readme/colorschemes:** add gruvbox-material colorscheme preview ([1ba2f3c](https://github.com/Ninzalo/tmux-style/commit/1ba2f3c9bfd1250939d53fef5ad4e472ffa79bc9))
+* **readme/credits:** add credits to Sainnhe Park ([1b7a5dd](https://github.com/Ninzalo/tmux-style/commit/1b7a5dd6c0a9da5943df0775d9d6a21fd311b770))
+
+
+### Others
+
+* **assets/colorschemes:** add gruvbox-material colorscheme ([95b4d1f](https://github.com/Ninzalo/tmux-style/commit/95b4d1f5d5d0bb2140cf050b1d50232483516a9a))
+* **main:** add gruvbox-material colorscheme ([0ef026f](https://github.com/Ninzalo/tmux-style/commit/0ef026f7129b80d9d2733232c9028e63983c9ac8))
+* **release-please:** update last release sha ([e138510](https://github.com/Ninzalo/tmux-style/commit/e138510aa15d6757f6c7e1977ebb74c6f629413f))
+
 ## [3.10.0](https://github.com/Ninzalo/tmux-style/compare/v3.8.1...v3.10.0) (2024-11-06)
 
 
