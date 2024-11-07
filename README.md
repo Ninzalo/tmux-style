@@ -156,6 +156,10 @@ set -g @tmst-colorscheme "gruvbox-dark"
     <img src='./assets/colorschemes/solarized-dark.png' height='16'/>
     <li>solarized-light</li>
     <img src='./assets/colorschemes/solarized-light.png' height='16'/>
+    <li>vscode-dark</li>
+    <img src='./assets/colorschemes/vscode-dark.png' height='16'/>
+    <li>vscode-light</li>
+    <img src='./assets/colorschemes/vscode-light.png' height='16'/>
 </ul>
 
 > [!NOTE]
@@ -297,6 +301,13 @@ set -ag status-left "#{E:@tmst-custom2-2-widget}" # Create default values for 'c
             @altercation
         </a> - <a href='https://github.com/altercation/solarized'>
             solarized
+        </a> colorscheme
+    </li>
+    <li>
+        <a href='https://github.com/Mofiqul'>
+            @Mofiqul
+        </a> - <a href='https://github.com/Mofiqul/vscode.nvim/tree/main'>
+            vscode
         </a> colorscheme
     </li>
 </ul>
