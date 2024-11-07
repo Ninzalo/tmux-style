@@ -140,6 +140,8 @@ set -g @tmst-colorscheme "gruvbox-dark"
 <ul>
     <li>gruvbox-dark</li>
     <img src='./assets/colorschemes/gruvbox-dark.png' height='16'/>
+    <li>gruvbox-material</li>
+    <img src='./assets/colorschemes/gruvbox-material.png' height='16'/>
     <li>gruvbox-light</li>
     <img src='./assets/colorschemes/gruvbox-light.png' height='16'/>
     <li>catppuccin-mocha</li>
