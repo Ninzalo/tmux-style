@@ -100,7 +100,7 @@ run '~/.tmux/plugins/tpm/tpm'
 <p>To check automatically generated parameters, run:</p>
 
 ```sh
-tmux show-options -g
+tmux show-options -g | grep ^@tmst
 ```
 
 <p>Each of these parameters can be customized directly in your tmux.conf file.
