@@ -22,8 +22,8 @@ if [ "$PARTS_AMOUNT" -lt 1 ]; then
   exit 1
 fi
 
-echo "Setting widget options for: PLUGIN_NAME=$PLUGIN_NAME, \
-  WIDGET_NAME=$WIDGET_NAME, PARTS_AMOUNT=$PARTS_AMOUNT"
+echo "Setting widget options for: PLUGIN_NAME=$PLUGIN_NAME,"\
+  "WIDGET_NAME=$WIDGET_NAME, PARTS_AMOUNT=$PARTS_AMOUNT"
 
 for ITERATION in $(seq 1 "$PARTS_AMOUNT"); do
   tmux set-option -ogq @${PLUGIN_NAME}-${WIDGET_NAME}-p${ITERATION}-value "${ITERATION}"
@@ -62,5 +62,5 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-echo "Successfully set widget options for: $WIDGET_NAME"\
+echo "Successfully set widget options for: '$WIDGET_NAME'"\
   "with PARTS_AMOUNT=$PARTS_AMOUNT"
