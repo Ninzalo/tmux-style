@@ -1,5 +1,23 @@
 # Changelog
 
+## [3.12.1](https://github.com/Ninzalo/tmux-style/compare/v3.12.0...v3.12.1) (2025-03-02)
+
+
+### Fixed
+
+* **utils/parse_widgets:** fix sed parse strings ([cf462d4](https://github.com/Ninzalo/tmux-style/commit/cf462d478a8516f2e60aa52ff79acf0485897798))
+
+
+### Refactor
+
+* **utils/parse_widgets:** add quotes in echo string ([ef1211a](https://github.com/Ninzalo/tmux-style/commit/ef1211a5d1ffca3711127e7b852751a96edf04ef))
+* **utils/set_widget_options:** refactor quotes ([7daba4c](https://github.com/Ninzalo/tmux-style/commit/7daba4c5e99a0bf82fb2a04060fdb7519fc53afc))
+
+
+### Documentation
+
+* **readme/widgets:** update command to check auto-gen parameters ([adb2f6b](https://github.com/Ninzalo/tmux-style/commit/adb2f6b0e50b2dd479b783a681eb7b347a438e78))
+
 ## [3.12.0](https://github.com/Ninzalo/tmux-style/compare/v3.11.0...v3.12.0) (2024-11-07)
 
 
