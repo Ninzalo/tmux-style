@@ -56,7 +56,7 @@ for WIDGET in $WIDGETS; do
     continue
   fi
 
-  echo "Found widget: $WIDGET_NAME with params amount: $PARTS_AMOUNT"
+  echo "Found widget: '$WIDGET_NAME' with params amount: $PARTS_AMOUNT"
   sh "$CURRENT_PATH/utils/set_widget_options.sh" \
     "$PLUGIN_NAME" "$WIDGET_NAME" "$PARTS_AMOUNT" "$WIDGET"
   
