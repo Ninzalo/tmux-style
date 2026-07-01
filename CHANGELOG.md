@@ -1,5 +1,14 @@
 # Changelog
 
+## [3.13.0](https://github.com/Ninzalo/tmux-style/compare/v3.12.1...v3.13.0) (2026-07-01)
+
+
+### Added
+
+* **themes/monokai:** add ayu colorscheme ([739cc16](https://github.com/Ninzalo/tmux-style/commit/739cc16c5c0db456a534ef96b3eb513b9c5be2f2))
+* **themes/monokai:** add monokai colorscheme ([f1c164d](https://github.com/Ninzalo/tmux-style/commit/f1c164dc287779501e4a4cfaeb2a909a6a2d2088))
+* **themes/vscode:** add nord colorscheme ([d97e100](https://github.com/Ninzalo/tmux-style/commit/d97e100844f5dda5effbc994b38cd3da93d8de11))
+
 ## [3.12.1](https://github.com/Ninzalo/tmux-style/compare/v3.12.0...v3.12.1) (2025-03-02)
 
 
