@@ -159,6 +159,7 @@ set -g @tmst-colorscheme "gruvbox-dark"
     <li>vscode-dark</li>
     <img src='./assets/colorschemes/vscode-dark.png' height='16'/>
     <li>nord</li>
+    <li>monokai</li>
 </ul>
 
 > [!NOTE]
